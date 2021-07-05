@@ -1,14 +1,11 @@
 package by.gourianova.monitorsensors.service;
 
 
-
 import by.gourianova.monitorsensors.SensorType;
-import by.gourianova.monitorsensors.SensorUnit;
 import by.gourianova.monitorsensors.dao.SensorTypeDao;
 import by.gourianova.monitorsensors.exception.DaoException;
 import by.gourianova.monitorsensors.exception.ServiceException;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 
 
@@ -39,5 +36,16 @@ public class SensorTypeService {
         } catch (DaoException e) {
             throw new ServiceException("Transaction failed in create method", e);
         }
+    }
+
+    public boolean deleteEntityById(int id) throws ServiceException {
+
+        try {
+            return sensorTypeDao.deleteEntityById(id);
+        } catch (DaoException e) {
+            throw new ServiceException("Transaction failed in delete method", e);
+        }
+
+
     }
 }

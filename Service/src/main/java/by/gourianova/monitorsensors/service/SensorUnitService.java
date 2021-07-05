@@ -28,4 +28,13 @@ public class SensorUnitService {
             throw new ServiceException("Transaction failed in createStation method", e);
         }
     }
+    public boolean deleteEntityById(int id) throws ServiceException {
+
+        try { return  sensorUnitDao.deleteEntityById(id);
+        } catch (DaoException e) {
+            throw new ServiceException("Transaction failed in delete method", e);
+        }
+
+
+    }
 }

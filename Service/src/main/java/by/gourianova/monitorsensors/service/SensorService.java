@@ -33,10 +33,10 @@ public class SensorService {
         }
         return sensorsList;
     }
-//TODO is nesessary? fix
-    public Sensor editSensor(Integer sensorId, Integer userId) throws ServiceException {
+
+    public Sensor editEntity(Integer entityId) throws ServiceException {
         Sensor sensor;
-        sensor = sensorDao.editSensor(sensorId, userId);
+        sensor = sensorDao.editEntity(entityId);
 
         return sensor;
     }
@@ -54,5 +54,14 @@ public class SensorService {
         } catch (DaoException e) {
             throw new ServiceException("Transaction failed in createApp method", e);
         }
+    }
+    public boolean deleteEntityById(Integer id) throws ServiceException {
+
+        try { return  sensorDao.deleteEntityById(id);
+        } catch (DaoException e) {
+            throw new ServiceException("Transaction failed in delete method", e);
+        }
+
+
     }
 }
