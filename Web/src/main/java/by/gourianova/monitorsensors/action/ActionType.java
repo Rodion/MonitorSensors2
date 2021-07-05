@@ -4,16 +4,13 @@ import by.gourianova.monitorsensors.action.admin.user.ShowChangeRolePage;
 import by.gourianova.monitorsensors.action.admin.sensor.*;
 import by.gourianova.monitorsensors.action.admin.user.*;
 import by.gourianova.monitorsensors.action.locale.ChangeLocaleAction;
-import by.gourianova.monitorsensors.action.sensor.EditSensorAction;
-import by.gourianova.monitorsensors.action.sensor.DeleteSensorAction;
+import by.gourianova.monitorsensors.action.sensor.*;
 import by.gourianova.monitorsensors.action.admin.ShowAdminPageAction;
+import by.gourianova.monitorsensors.action.sensor.ShowAllSensorsByPageAction;
 import by.gourianova.monitorsensors.action.user.*;
 
 import by.gourianova.monitorsensors.action.admin.role.AddRoleAction;
 import by.gourianova.monitorsensors.action.admin.role.DeleteRoleAction;
-
-import by.gourianova.monitorsensors.action.sensor.ShowAllSensorsByPageAction;
-import by.gourianova.monitorsensors.action.sensor.ShowAllUserSensorsAction;
 
 
 public enum ActionType {
@@ -28,18 +25,18 @@ public enum ActionType {
      ADD_UNIT(new AddUnitAction()),
 
     EDIT_SENSOR(new EditSensorAction()),
-    DELETE_SENSOR(new DeleteSensorAction()),
+
 
     CHANGE_USER_ROLE(new ChangeUserRoleAction()),
     CHANGE_USER_DATA(new ChangeUserDataAction()),
-   // CHANGE_TYPE(new ChangeTypeAction()),
+
 
 
     SHOW_ALL_USER_SENSORS_CHANGING(new ShowAllUserSensorsAction()),
     SHOW_ALL_SENSORS(new ShowAllSensorsAction()),
     SHOW_ALL_TYPES(new ShowAllTypesAction()),
     SHOW_ALL_SENSOR_UNITS(new ShowAllUnitsAction()),
-
+    SHOW_DELETE_SENSOR_PAGE(new ShowDeleteSensorPageAction()),
 
     SHOW_ALL_USERS(new ShowAllUserAction()),
     SHOW_ALL_ROLES(new ShowAllRoleAction()),
@@ -58,6 +55,12 @@ public enum ActionType {
 
     DELETE_ROLE(new DeleteRoleAction()),
 
+    DELETE_SENSOR(new DeleteSensorAction()),
+
+    DELETE_TYPE(new DeleteTypeAction()),
+
+
+    DELETE_UNIT(new DeleteUnitAction()),
 
     SHOW_USER_CHANGE_ROLE_PAGE (new ShowChangeRolePage()),
 

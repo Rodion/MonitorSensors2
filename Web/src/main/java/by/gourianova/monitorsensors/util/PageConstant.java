@@ -9,8 +9,9 @@ public class PageConstant {
     public final static String ADMIN_PAGE = "jsp/admin_page.jsp";
     public final static String DELETE_USER_PAGE = "includeAdmin/user_delete.jsp";
     public final static String EDIT_SENSOR = "jsp/edit_sensor.jsp";
-    public final static String DELETE_SENSOR = "jsp/delete_sensor.jsp";
+   // public final static String DELETE_SENSOR = "jsp/delete_sensor.jsp";
 
+    public final static String DELETE_SENSOR="includeAdmin/sensor_delete.jsp";
     public final static String ALL_USERS = "includeAdmin/user_show_all.jsp";
     public final static String ALL_ROLES = "includeAdmin/role_show_all.jsp";
     public final static String ALL_SENSORS= "includeAdmin/sensor_show_all.jsp";
