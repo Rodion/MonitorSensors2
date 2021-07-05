@@ -25,9 +25,9 @@ public class SensorDao extends AbstractDao<Sensor> {
     //TODO rewrite search not in sql?
     private final static String SQL_FIND_SENSOR = "SELECT sensors.Id ,   sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit,  sensors.Location, sensors.Description  FROM monitorsensors.sensors, monitorsensors.sensor_types, monitorsensors.sensor_units  WHERE sensors.Id = ? AND sensors.Name=?  AND sensors.Model = ?;";
 
-    private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location) VALUES (?, ?, ?,?, ?, ?,?);";
-    //TODO: fix description
-    //private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location, Description) VALUES (?, ?, ?,?, ?, ?,?, ?);";
+    //private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location) VALUES (?, ?, ?,?, ?, ?,?);";
+
+    private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location, Description) VALUES (?, ?, ?,?, ?, ?,?, ?);";
 
     private final static String SQL_DELETE_SENSOR = "DELETE* FROM  monitorsensors.sensors  WHERE sensors.Id = ?;";
 
@@ -48,11 +48,10 @@ public class SensorDao extends AbstractDao<Sensor> {
             preparedStatement.setInt(4, entity.getRange_to());
             preparedStatement.setInt(5, entity.getTypeId());
             preparedStatement.setInt(6, entity.getUnitId());
-
             //preparedStatement.setString(5, entity.getType());
             //preparedStatement.setString(6, entity.getUnit());
             preparedStatement.setString(7, entity.getLocation());
-       // preparedStatement.setString(9, entity.getDescription());
+            preparedStatement.setString(8, entity.getDescription());
             preparedStatement.executeUpdate();
             System.out.println("DAOSensor.createEntity OK ");
             isCreate = true;
@@ -77,10 +76,8 @@ public class SensorDao extends AbstractDao<Sensor> {
             preparedStatement = connection.prepareStatement(SQL_FIND_ALL_SENSORS);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                System.out.println("+&");
-                Sensor sensor = buildSensor(resultSet);
-                System.out.println("+?");
-                sensorsList.add(sensor);
+                 Sensor sensor = buildSensor(resultSet);
+                 sensorsList.add(sensor);
             }
         } catch (SQLException e) {
             throw new DaoException("Error in findAll method", e);
@@ -160,9 +157,9 @@ public class SensorDao extends AbstractDao<Sensor> {
         sensor.setType(resultSet.getString(6));
         sensor.setUnit(resultSet.getString(7));
         sensor.setLocation(resultSet.getString(8));
-        //if (resultSet.getString(9)!=null) {
-       // sensor.setDescription(resultSet.getString(9));
-        //}
+        if (resultSet.getString(9)!=null) {
+        sensor.setDescription(resultSet.getString(9));
+        }
         return sensor;
     }
 
