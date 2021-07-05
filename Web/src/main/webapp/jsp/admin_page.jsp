@@ -54,12 +54,12 @@
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.title"/></td>
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.model"/></td>
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.range"/></td>
-                        <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.type"/></td>
+                      <%--  <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.type"/></td>
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.unit"/></td>
-                        <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.location"/></td>
-                        <%-- <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.description"/></td> --%>
+                        <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.location"/></td>--%>
+                     <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.description"/></td>
                     </tr>
-                    <c:forEach items="${sensorsList}" varStatus="сounter" end="4">
+                    <c:forEach items="${sensorsList}" varStatus="сounter" end="3">
                         <tr class="active">
 
                             <td align="center"
@@ -69,14 +69,14 @@
                      <td align="center"
                                 style="vertical-align: middle; border-color: #8381eb">${(sensorsList[сounter.count-1].range_to)-(sensorsList[сounter.count-1].range_from)}</td>
                             <td align="center"
-                                style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].type}</td>
+                        <%--        style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].type}</td>
                             <td align="center"
                                 style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].unit}</td>
                             <td align="center"
-                                style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].location}</td>
-                            <%-- <td align="center"
+                                style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].location}</td> --%>
+                            <td align="center"
                                 style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].description}</td>
-                                --%>
+                                
                         </tr>
                     </c:forEach>
                 </table>
@@ -92,7 +92,7 @@
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor_type.type"/></td>
 
                     </tr>
-                    <c:forEach items="${sensorTypesList}" varStatus="сounter" end="4">
+                    <c:forEach items="${sensorTypesList}" varStatus="сounter" end="3">
                         <tr class="active">
 
                             <td align="center"
@@ -115,7 +115,7 @@
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor_unit.unit"/></td>
 
                     </tr>
-                    <c:forEach items="${sensorUnitsList}" varStatus="сounter" end="4">
+                    <c:forEach items="${sensorUnitsList}" varStatus="сounter" end="3">
                         <tr class="active">
 
                             <td align="center"

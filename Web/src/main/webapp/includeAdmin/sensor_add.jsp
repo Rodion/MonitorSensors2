@@ -21,7 +21,7 @@
                     <label for="title" class="col-sm-3 control-label"><fmt:message key="add.sensor.form.title"/></label>
                     <div class="col-sm-9">
                         <input type="text"  id="title" name="title" class="form-control" placeholder="<fmt:message key="add.sensor.form.title.placeholder"/>"
-                               maxlength="100" required pattern="[a-zA-Z0-9._*]{3,100}">
+                               maxlength="30" required pattern="[a-zA-Z0-9._*]{1,30}">
                         <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.sensor.title"/></b>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <label for="model" class="col-sm-3 control-label"><fmt:message key="add.sensor.form.model"/></label>
                     <div class="col-sm-9">
                         <input type="text"  id="model" name="model" class="form-control" placeholder="<fmt:message key="add.sensor.form.model.placeholder"/>"
-                               maxlength="100" required pattern="[a-zA-Z0-9._*]{3,100}">
+                               maxlength="15" required pattern="[a-zA-Z0-9.-_*]{1,15}">
                         <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.sensor.model"/></b>
                     </div>
                 </div>
@@ -37,16 +37,16 @@
                     <label for="range_fromForm" class="col-sm-2 control-label"><fmt:message key="register.form.range_from"/></label>
                     <div class="col-sm-10">
                         <input type="number" step="1" id="range_fromForm" name="range_from" class="form-control" placeholder="<fmt:message key="register.form.range_from.placeholder"/>"
-                               maxlength="1000" required pattern="[0-100]{3,100}">
+                               maxlength="100" required pattern="[0-100]{1,100}">
                         <b id="range_from" style="color: red; font-size: 10px"><fmt:message key="validation.range_from"/></b>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="range_fromForm" class="col-sm-2 control-label"><fmt:message key="register.form.range_from"/></label>
+                    <label for="range_fromForm" class="col-sm-2 control-label"><fmt:message key="register.form.range_to"/></label>
                     <div class="col-sm-10">
                         <input type="number" step="1" id="range_toForm" name="range_to" class="form-control" placeholder="<fmt:message key="register.form.range_to.placeholder"/>"
                                <%--TODO: onKeyup="checkData('range')" --%>
-                               maxlength="1000" required pattern="[0-100]{3,100}">
+                               maxlength="100" required pattern="[0-100]{1,100}">
                         <b id="range_to" style="color: red; font-size: 10px"><fmt:message key="validation.range_to"/></b>
                     </div>
                 </div>
@@ -75,16 +75,16 @@
                 <div class="form-group">
                     <label for="location" class="col-sm-3 control-label"><fmt:message key="add.sensor.form.location"/></label>
                     <div class="col-sm-9">
-                        <input type="text"  id="location" name="location" class="form-control" placeholder="<fmt:message key="add.sensor.forml.location.placeholder"/>"
-                               maxlength="100" required pattern="[a-zA-Z0-9._*]{3,100}">
+                        <input type="text"  id="location" name="location" class="form-control" placeholder="<fmt:message key="add.sensor.form.location.placeholder"/>"
+                               maxlength="40" required pattern="[a-zA-Z0-9._*]{0,40}">
                         <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.sensor.location"/></b>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="location" class="col-sm-3 control-label"><fmt:message key="add.sensor.form.description"/></label>
                     <div class="col-sm-9">
-                        <input type="text"  id="description" name="location" class="form-control" placeholder="<fmt:message key="add.sensor.forml.description.placeholder"/>"
-                               maxlength="100" required pattern="[a-zA-Z0-9._*]{3,100}">
+                        <input type="text"  id="description" name="location" class="form-control" placeholder="<fmt:message key="add.sensor.form.description.placeholder"/>"
+                               maxlength="100" required pattern="[a-zA-Z0-9._*]{0,200}">
                         <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.sensor.description"/></b>
                     </div>
                 </div>
