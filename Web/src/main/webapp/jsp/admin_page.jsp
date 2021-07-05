@@ -76,7 +76,7 @@
                                 style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].location}</td> --%>
                             <td align="center"
                                 style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].description}</td>
-                                
+
                         </tr>
                     </c:forEach>
                 </table>

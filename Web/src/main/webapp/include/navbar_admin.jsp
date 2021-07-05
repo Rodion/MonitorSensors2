@@ -87,6 +87,9 @@
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="/controller?action=show_all_sensors"><fmt:message key="nav.sensor.show.all"/></a>
+
+                    <li><a href="/controller?action=show_delete_sensor_page"><fmt:message key="nav.sensor.delete"/></a></li>
+
                     <li><a href="/controller?action=show_add_sensor_page"><fmt:message key="nav.sensor.add"/></a></li>
                     <li class="divider"></li>
                     <li><a href="#"><fmt:message key="search.form.sensor"/></a>
@@ -127,6 +130,7 @@
                     <li><a href="/controller?action=show_all_types"><fmt:message key="nav.type.show.all"/></a>
                     </li>
                     <li><a href="../includeAdmin/type_add.jsp"><fmt:message key="nav.type.add"/></a></li>
+                    <li><a href="../includeAdmin/type_delete.jsp"><fmt:message key="nav.type.delete"/></a></li>
                 <%--    <li><a href="/controller?action=get_type_data"><fmt:message key="nav.type.edit"/></a>
                     </li> --%>
 
@@ -141,6 +145,7 @@
                         <li><a href="/controller?action=show_all_sensor_units"><fmt:message
                                 key="nav.sensor_unit.show.all"/></a>
                         </li>
+                        <li><a href="../includeAdmin/unit_delete.jsp"><fmt:message key="nav.unit.delete"/></a></li>
                         <li><a href="../includeAdmin/unit_add.jsp"><fmt:message key="nav.sensor_unit.add"/></a>
                         </li>
                     </ul>

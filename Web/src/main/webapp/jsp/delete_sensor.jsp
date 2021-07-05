@@ -13,9 +13,7 @@
 <%@ include file="../include/navbar.jsp" %>
 <div class="container-fluid">
     <div class="col-md-6 col-md-offset-6">
-        <div class="text-center">
-            <h4><fmt:message key="message.ok"/></h4>
-        </div>
+
         <table class="table table-condensed table-bordered">
             <tr>
                 <td align="center" style="border-color: #dae5ff"><fmt:message key="table.number"/></td>
