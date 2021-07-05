@@ -1,5 +1,6 @@
 package by.gourianova.monitorsensors.dao;
 
+import by.gourianova.monitorsensors.Entity;
 import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.db.ConnectionPool;
@@ -132,9 +133,11 @@ public class UserDao extends AbstractDao<User> {
     }
 
     @Override
-    public Sensor editSensor(Integer sensorId, Integer userId) {
+    public User editEntity(Integer entityId) {
         return null;
     }
+
+
 
 
 

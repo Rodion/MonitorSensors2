@@ -2,6 +2,7 @@ package by.gourianova.monitorsensors.dao;
 
 
 
+import by.gourianova.monitorsensors.Entity;
 import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.SensorUnit;
 import by.gourianova.monitorsensors.db.ConnectionPool;
@@ -19,7 +20,7 @@ public class SensorUnitDao extends AbstractDao<SensorUnit> {
     private final static String SQL_FIND_ALL_SENSOR_UNITS = "SELECT * FROM sensor_units;";
     private final static String SQL_CREATE_SENSOR_UNIT = "INSERT INTO sensor_units (unit) VALUES (?);";
     private final static String SQL_FIND_SENSOR_UNIT_BY_ID = "SELECT * FROM sensor_units WHERE id = ?;";
-
+    private final static String SQL_DELETE_UNIT_BY_ID = "DELETE FROM sensor_units WHERE id=?;";
     @Override
     public ArrayList<SensorUnit> findAll() throws DaoException {
         ArrayList<SensorUnit> sensorUnitsList = new ArrayList<>();
@@ -90,11 +91,26 @@ public class SensorUnitDao extends AbstractDao<SensorUnit> {
 
     @Override
     public boolean deleteEntityById(Integer id) throws DaoException {
-        return false;
+        ProxyConnection connection = null;
+        boolean isDeleted = false;
+        PreparedStatement preparedStatement = null;
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            preparedStatement = connection.prepareStatement(SQL_DELETE_UNIT_BY_ID);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            isDeleted = true;
+        } catch (SQLException e) {
+            throw new DaoException("Error in deleteEntity method", e);
+        } finally {
+            close(preparedStatement);
+            close(connection);
+        }
+        return isDeleted;
     }
 //TODO: fix editEntity not sensor
     @Override
-    public Sensor editSensor(Integer sensorId, Integer userId) {
+    public Entity editEntity(Integer entityId) {
         return null;
     }
 

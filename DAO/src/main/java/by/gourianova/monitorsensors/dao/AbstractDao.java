@@ -46,5 +46,5 @@ public abstract class AbstractDao<T extends Entity> {
     public abstract boolean deleteEntityById(Integer id) throws DaoException;
 
 
-    public abstract Sensor editSensor(Integer sensorId, Integer userId);
+    public abstract Entity editEntity(Integer entityId);
 }

@@ -1,6 +1,7 @@
 package by.gourianova.monitorsensors.dao;
 
 
+import by.gourianova.monitorsensors.Entity;
 import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.db.ConnectionPool;
 import by.gourianova.monitorsensors.db.ProxyConnection;
@@ -29,7 +30,7 @@ public class SensorDao extends AbstractDao<Sensor> {
 
     private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location, Description) VALUES (?, ?, ?,?, ?, ?,?, ?);";
 
-    private final static String SQL_DELETE_SENSOR = "DELETE* FROM  monitorsensors.sensors  WHERE sensors.Id = ?;";
+    private final static String SQL_DELETE_SENSOR_BY_ID = "DELETE* FROM  monitorsensors.sensors  WHERE sensors.Id = ?;";
 
 
     @Override
@@ -114,13 +115,29 @@ public class SensorDao extends AbstractDao<Sensor> {
 
     @Override
     public boolean deleteEntityById(Integer id) throws DaoException {
-        return false;
+        ProxyConnection connection = null;
+        boolean isDeleted = false;
+        PreparedStatement preparedStatement = null;
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            preparedStatement = connection.prepareStatement(SQL_DELETE_SENSOR_BY_ID);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            isDeleted = true;
+        } catch (SQLException e) {
+            throw new DaoException("Error in deleteEntity method", e);
+        } finally {
+            close(preparedStatement);
+            close(connection);
+        }
+        return isDeleted;
     }
 
     @Override
-    public Sensor editSensor(Integer sensorId, Integer userId) {
+    public Sensor editEntity(Integer entityId) {
         return null;
     }
+
 
     public ArrayList<Sensor> findAllByPage(int pageCapacity, int pageNumber) throws DaoException {
         ArrayList<Sensor> sensorsList = new ArrayList<>();

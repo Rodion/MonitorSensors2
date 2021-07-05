@@ -106,7 +106,7 @@ public class RoleDao extends AbstractDao<Role> {
     }
 
     @Override
-    public Sensor editSensor(Integer sensorId, Integer userId) {
+    public Role editEntity(Integer entityId) {
         return null;
     }
 }

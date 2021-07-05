@@ -1,6 +1,7 @@
 package by.gourianova.monitorsensors.dao;
 
 
+import by.gourianova.monitorsensors.Entity;
 import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.SensorType;
 import by.gourianova.monitorsensors.db.ConnectionPool;
@@ -17,8 +18,6 @@ import java.util.Base64;
 
 
 public class SensorTypeDao extends AbstractDao<SensorType> {
-    private final static String SQL_CREATE_TABLE_TYPES = "create table if not exists sensor_types(id INT(11) NOT NULL auto_increment," +
-            "Type varchar(20),  primary key (id) )  DEFAULT CHARSET=utf8;";
     private final static String SQL_FIND_ALL_TYPES = "SELECT * FROM sensor_types;";
     private final static String SQL_CREATE = "INSERT INTO sensor_types (Type) VALUES(?);";
     private final static String SQL_FIND_TYPE_BY_ID = "SELECT * FROM sensor_types WHERE id = ?;";
@@ -149,7 +148,8 @@ public class SensorTypeDao extends AbstractDao<SensorType> {
     }
 
     @Override
-    public Sensor editSensor(Integer sensorId, Integer userId) {
+    public Entity editEntity(Integer entityId) {
         return null;
     }
+
 }
