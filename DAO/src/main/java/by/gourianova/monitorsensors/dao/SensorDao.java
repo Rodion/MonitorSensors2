@@ -1,7 +1,6 @@
 package by.gourianova.monitorsensors.dao;
 
 
-import by.gourianova.monitorsensors.Entity;
 import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.db.ConnectionPool;
 import by.gourianova.monitorsensors.db.ProxyConnection;
@@ -16,21 +15,20 @@ import java.util.ArrayList;
 public class SensorDao extends AbstractDao<Sensor> {
 
 
-
-   // private final static String SQL_FIND_ALL_SENSORS = "SELECT sensors.Id, sensors.Name, sensors.Model, sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit, sensors.Location, sensors.Description FROM sensors, sensor_types, sensor_units WHERE sensors.Type_Id = sensor_types.Id AND sensors.Unit_Id = sensor_units.Id;";
-   private final static String SQL_FIND_ALL_SENSORS = "SELECT*  FROM monitorsensors.sensors;";
+    // private final static String SQL_FIND_ALL_SENSORS = "SELECT sensors.Id, sensors.Name, sensors.Model, sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit, sensors.Location, sensors.Description FROM sensors, sensor_types, sensor_units WHERE sensors.Type_Id = sensor_types.Id AND sensors.Unit_Id = sensor_units.Id;";
+    private final static String SQL_FIND_ALL_SENSORS = "SELECT*  FROM monitorsensors.sensors;";
 
     private final static String SQL_FIND_BY_PAGE = "SELECT * FROM monitorsensors.sensors ORDER BY sensors.Id LIMIT 4 OFFSET ?;";
     //TODO  select only *?
     private final static String SQL_FIND_BY_ID = "SELECT sensors.Id , sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensors.Type, sensors.Unit,  sensors.Location, sensors.Description   FROM monitorsensors.sensors WHERE sensors.Id = ?  ORDER BY sensors.Id;";
-    //TODO rewrite search not in sql?
+
     private final static String SQL_FIND_SENSOR = "SELECT sensors.Id ,   sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit,  sensors.Location, sensors.Description  FROM monitorsensors.sensors, monitorsensors.sensor_types, monitorsensors.sensor_units  WHERE sensors.Id = ? AND sensors.Name=?  AND sensors.Model = ?;";
 
     //private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location) VALUES (?, ?, ?,?, ?, ?,?);";
 
     private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location, Description) VALUES (?, ?, ?,?, ?, ?,?, ?);";
 
-    private final static String SQL_DELETE_SENSOR_BY_ID = "DELETE* FROM  monitorsensors.sensors  WHERE sensors.Id = ?;";
+    private final static String SQL_DELETE_SENSOR_BY_ID = "DELETE FROM  sensors  WHERE sensors.Id = ?;";
 
 
     @Override
@@ -77,8 +75,8 @@ public class SensorDao extends AbstractDao<Sensor> {
             preparedStatement = connection.prepareStatement(SQL_FIND_ALL_SENSORS);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                 Sensor sensor = buildSensor(resultSet);
-                 sensorsList.add(sensor);
+                Sensor sensor = buildSensor(resultSet);
+                sensorsList.add(sensor);
             }
         } catch (SQLException e) {
             throw new DaoException("Error in findAll method", e);
@@ -94,7 +92,7 @@ public class SensorDao extends AbstractDao<Sensor> {
         Sensor sensor = null;
         ProxyConnection connection = null;
         PreparedStatement preparedStatement = null;
-        System.out.println(id + "id in SensorDao");
+
         try {
             connection = ConnectionPool.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(SQL_FIND_SENSOR);
@@ -118,6 +116,7 @@ public class SensorDao extends AbstractDao<Sensor> {
         ProxyConnection connection = null;
         boolean isDeleted = false;
         PreparedStatement preparedStatement = null;
+        
         try {
             connection = ConnectionPool.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(SQL_DELETE_SENSOR_BY_ID);
@@ -174,8 +173,8 @@ public class SensorDao extends AbstractDao<Sensor> {
         sensor.setType(resultSet.getString(6));
         sensor.setUnit(resultSet.getString(7));
         sensor.setLocation(resultSet.getString(8));
-        if (resultSet.getString(9)!=null) {
-        sensor.setDescription(resultSet.getString(9));
+        if (resultSet.getString(9) != null) {
+            sensor.setDescription(resultSet.getString(9));
         }
         return sensor;
     }
