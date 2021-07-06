@@ -35,7 +35,6 @@ public class SensorType extends Entity {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

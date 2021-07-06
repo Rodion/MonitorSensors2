@@ -40,7 +40,7 @@ public class SensorUnit extends Entity {
         if (!(o instanceof SensorUnit)) return false;
         SensorUnit sensorUnit = (SensorUnit) o;
         return getId() == sensorUnit.getId() &&
-                Objects.equals(getUnit(), sensorUnit.getUnit()) ;
+                Objects.equals(getUnit(), sensorUnit.getUnit());
     }
 
     @Override
@@ -53,6 +53,6 @@ public class SensorUnit extends Entity {
         return "SensorUnit{" +
                 "id=" + id +
                 ", unit='" + unit + '\'' +
-                    '}';
+                '}';
     }
 }

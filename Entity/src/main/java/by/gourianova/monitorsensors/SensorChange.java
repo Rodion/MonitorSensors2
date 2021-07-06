@@ -1,7 +1,5 @@
 package by.gourianova.monitorsensors;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 
@@ -41,7 +39,7 @@ public class SensorChange extends Entity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof SensorChange)) return false;
-       SensorChange sensorChange = (SensorChange) o;
+        SensorChange sensorChange = (SensorChange) o;
         return getId() == sensorChange.getId() &&
                 getSensorId() == sensorChange.getSensorId() &&
                 getUserId() == sensorChange.getUserId();
