@@ -1,4 +1,5 @@
 package by.gourianova.monitorsensors.util;
+
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +31,7 @@ public class ConfigurationManager {
         ResourceBundle resourceBundle = null;
         try {
             resourceBundle = ResourceBundle.getBundle(CONFIGURATION);
-        }  catch (MissingResourceException e) {
+        } catch (MissingResourceException e) {
             LOGGER.log(Level.FATAL, e.getMessage());
             throw new RuntimeException(e.getMessage());
         }

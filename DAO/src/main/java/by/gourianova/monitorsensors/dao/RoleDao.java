@@ -1,7 +1,6 @@
 package by.gourianova.monitorsensors.dao;
 
 import by.gourianova.monitorsensors.Role;
-import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.db.ConnectionPool;
 import by.gourianova.monitorsensors.db.ProxyConnection;
 import by.gourianova.monitorsensors.exception.DaoException;
@@ -107,6 +106,11 @@ public class RoleDao extends AbstractDao<Role> {
 
     @Override
     public Role editEntity(Integer entityId) {
+        return null;
+    }
+
+    @Override
+    public Role updateEntity(Role entity) throws DaoException {
         return null;
     }
 }

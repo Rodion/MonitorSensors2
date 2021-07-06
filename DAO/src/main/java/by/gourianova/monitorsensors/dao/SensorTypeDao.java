@@ -2,19 +2,15 @@ package by.gourianova.monitorsensors.dao;
 
 
 import by.gourianova.monitorsensors.Entity;
-import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.SensorType;
 import by.gourianova.monitorsensors.db.ConnectionPool;
 import by.gourianova.monitorsensors.db.ProxyConnection;
 import by.gourianova.monitorsensors.exception.DaoException;
 
-import java.io.InputStream;
-import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Base64;
 
 
 public class SensorTypeDao extends AbstractDao<SensorType> {
@@ -90,7 +86,7 @@ public class SensorTypeDao extends AbstractDao<SensorType> {
         }
     }
 
-    public void updateEntity(SensorType entity) throws DaoException {
+    public SensorType updateEntity(SensorType entity) throws DaoException {
         ProxyConnection connection = null;
         PreparedStatement preparedStatement = null;
         try {
@@ -105,7 +101,7 @@ public class SensorTypeDao extends AbstractDao<SensorType> {
             close(preparedStatement);
             close(connection);
         }
-    }
+   return entity; }
 
     @Override
     public boolean createEntity(SensorType entity) throws DaoException {

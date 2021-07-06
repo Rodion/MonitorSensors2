@@ -1,9 +1,11 @@
 package by.gourianova.monitorsensors.dao;
+
 import by.gourianova.monitorsensors.Entity;
-import by.gourianova.monitorsensors.exception.DaoException;
 import by.gourianova.monitorsensors.Sensor;
+import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.db.ConnectionPool;
 import by.gourianova.monitorsensors.db.ProxyConnection;
+import by.gourianova.monitorsensors.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -47,4 +49,8 @@ public abstract class AbstractDao<T extends Entity> {
 
 
     public abstract Entity editEntity(Integer entityId);
+
+
+
+    public abstract T updateEntity(T entity) throws DaoException;
 }

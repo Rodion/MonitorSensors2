@@ -96,7 +96,7 @@ public class ConnectionPool {
         }
         try {
             Enumeration<Driver> drivers = DriverManager.getDrivers();
-            while (drivers.hasMoreElements()){
+            while (drivers.hasMoreElements()) {
                 Driver driver = drivers.nextElement();
                 DriverManager.deregisterDriver(driver);
             }

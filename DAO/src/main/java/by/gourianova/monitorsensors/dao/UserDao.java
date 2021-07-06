@@ -1,7 +1,6 @@
 package by.gourianova.monitorsensors.dao;
 
 import by.gourianova.monitorsensors.Entity;
-import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.db.ConnectionPool;
 import by.gourianova.monitorsensors.db.ProxyConnection;
@@ -46,11 +45,12 @@ public class UserDao extends AbstractDao<User> {
         }
         return isCreated;
     }
+
     public User findEntityByLoginAndPassword(String login, String password) throws DaoException {
         User user = null;
         ProxyConnection connection = null;
         PreparedStatement preparedStatement = null;
-            try {
+        try {
             connection = ConnectionPool.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(SQL_FIND_USER_BY_LOGIN_PASSWORD);
             preparedStatement.setString(1, login);
@@ -140,7 +140,6 @@ public class UserDao extends AbstractDao<User> {
 
 
 
-
     public boolean findEntityByLogin(String login) throws DaoException {
         ProxyConnection connection = null;
         PreparedStatement preparedStatement = null;
@@ -158,6 +157,7 @@ public class UserDao extends AbstractDao<User> {
         }
     }
 
+    @Override
     public User updateEntity(User user) throws DaoException {
         ProxyConnection connection = null;
         PreparedStatement preparedStatement = null;
@@ -177,7 +177,6 @@ public class UserDao extends AbstractDao<User> {
     }
 
 
-
     private User buildUser(ResultSet resultSet) throws SQLException {
         User user = new User();
         user.setId(resultSet.getInt(1));
@@ -188,7 +187,6 @@ public class UserDao extends AbstractDao<User> {
         user.setRoleId(resultSet.getInt(6));
         return user;
     }
-
 
 
 }
