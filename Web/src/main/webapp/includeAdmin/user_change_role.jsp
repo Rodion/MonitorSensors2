@@ -22,13 +22,17 @@
                     <div class="col-sm-9">
                         <select class="form-control" id="user" name="userId">
                             <c:forEach items="${usersList}" var="user">
-                                <option value="${user.id}"><fmt:message key="update.user.id"/> ${user.id}, <fmt:message key="update.user.role"/> ${user.roleId}, <fmt:message key="update.user.first.name"/> ${user.firstName}, <fmt:message key="update.user.login"/> ${user.login}</option>
+                                <option value="${user.id}"><fmt:message key="update.user.id"/> ${user.id}, <fmt:message
+                                        key="update.user.role"/> ${user.roleId}, <fmt:message
+                                        key="update.user.first.name"/> ${user.firstName}, <fmt:message
+                                        key="update.user.login"/> ${user.login}</option>
                             </c:forEach>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="roleId" class="col-sm-3 control-label"><fmt:message key="update.user.form.role"/></label>
+                    <label for="roleId" class="col-sm-3 control-label"><fmt:message
+                            key="update.user.form.role"/></label>
                     <div class="col-sm-9">
                         <select class="form-control" id="roleID" name="roleId">
                             <c:forEach items="${rolesList}" var="role">

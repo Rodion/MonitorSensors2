@@ -6,11 +6,11 @@
     <div class="container-fluid">
         <form class="navbar-form navbar-right" action="/controller">
 
-                 <input type="hidden" name="action" value="show_admin_page">
-  <button type="submit" class="btn btn-default"><fmt:message key="footer.admin"/></button>
+            <input type="hidden" name="action" value="show_admin_page">
+            <button type="submit" class="btn btn-default"><fmt:message key="footer.admin"/></button>
 
-</form>
-</div>
+        </form>
+    </div>
 </nav>
 <script src="../js/jquery-3.2.0.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>

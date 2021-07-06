@@ -42,7 +42,7 @@
                     <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.type"/></td>
                     <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.unit"/></td>
                     <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.location"/></td>
-                  <%--   <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.description"/></td>--%>
+                        <%--   <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.description"/></td>--%>
 
 
                     <c:if test="${not empty user  and  (user.roleId == 6)}">
@@ -70,18 +70,18 @@
                             style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].name}</td>
                         <td align="center"
                             style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].model}</td>
-                            <td align="center"
-                                         style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].range_to-sensorsList[сounter.count-1].range_from}</td>
-                              <td align="center"
-                                         style="vertical-align: middle; border-color: #8381eb"> ${sensorsList[сounter.count-1].type}</td>
-                                     <td align="center"
-                                         style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].unit}</td>
+                        <td align="center"
+                            style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].range_to-sensorsList[сounter.count-1].range_from}</td>
+                        <td align="center"
+                            style="vertical-align: middle; border-color: #8381eb"> ${sensorsList[сounter.count-1].type}</td>
+                        <td align="center"
+                            style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].unit}</td>
 
                         <td align="center"
                             style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].location}</td>
 
-                  <%--      <td align="center"
-                            style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].description}</td> --%>
+                            <%--      <td align="center"
+                                      style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].description}</td> --%>
 
 
                         <c:if test="${not empty user  and  (user.roleId == 6)}">

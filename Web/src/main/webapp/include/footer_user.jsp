@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <br>
-<font color="#ff4500" >
+<font color="#ff4500">
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${message}
 </font>
@@ -16,7 +16,8 @@
     <div class="container-fluid">
         <form class="navbar-form navbar-right" action="/Controller" method="POST">
             <input type="hidden" name="command" value="gotoadminpage">
-            <option>  <a href="/Controller?command=gotodeleteuserpage" class="btn btn-default"><fmt:message key="delete.user"/></a></option>
+            <option><a href="/Controller?command=gotodeleteuserpage" class="btn btn-default"><fmt:message
+                    key="delete.user"/></a></option>
 
 
             <!-- <select title="locale" name="locale" class="form-control input-sm"
@@ -32,7 +33,9 @@
     <div class="container-fluid">
         <form class="navbar-form navbar-right" action="/Controller" method="POST">
             <input type="hidden" name="command" value="gotodeleteuserpage">
-            <option>    <a href="/Controller?command=gotoadminpage" class="btn btn-default"><fmt:message key="continue"/></a>&nbsp;&nbsp;&nbsp;</option>
+            <option><a href="/Controller?command=gotoadminpage" class="btn btn-default"><fmt:message
+                    key="continue"/></a>&nbsp;&nbsp;&nbsp;
+            </option>
 
         </form>
     </div>

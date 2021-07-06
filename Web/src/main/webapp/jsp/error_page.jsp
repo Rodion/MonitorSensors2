@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page isErrorPage="true" %>
 <%@ include file="../include/uselocale.jsp" %>
@@ -14,22 +14,22 @@
 
 </head>
 <body>
-<%@ include file="../include/navbar.jsp"%>
+<%@ include file="../include/navbar.jsp" %>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-3">
 
-                <div class="form-group">
+            <div class="form-group">
 
-                 <br> <a href="http://csc.buxar-host.ru/"> Test binocularvision treatment app "Gleaming Star" </a>
+                <br> <a href="http://csc.buxar-host.ru/"> Test binocularvision treatment app "Gleaming Star" </a>
 
-                </div>
+            </div>
 
             <h2><c:out value="${message}"/></h2>
             <c:remove var="message" scope="session"/>
         </div>
     </div>
-<%@ include file="../include/footer.jsp" %>
+    <%@ include file="../include/footer.jsp" %>
 </body>
 </html>

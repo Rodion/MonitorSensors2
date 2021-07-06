@@ -19,50 +19,53 @@
 
 <div class="container-fluid">
     <div class="col-sm-10">
-    <c:if test="${empty user or (not empty user and user.roleId < 6)}">
-        <lable class="col-sm-19 control-label"><b><fmt:message key="welcome.guest"/></b></lable>
-    </c:if>
+        <c:if test="${empty user or (not empty user and user.roleId < 6)}">
+            <lable class="col-sm-19 control-label"><b><fmt:message key="welcome.guest"/></b></lable>
+        </c:if>
     </div>
 </div>
 
 <c:forEach test="${not empty user  and  (user.roleId == 6) or (user.roleId == 7)}">
 
-<div class="container-fluid">
-    <div class="col-md-6 col-md-offset-6">
-        <table class="table table-condensed table-bordered">
-            <tr>
-<c:if test="${not empty user  and  (user.roleId == 6)}">
-                 <td align="center" style="border-color: #8381eb"><fmt:message key="blank"/></td>
-</c:if>
-                <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.title"/></td>
-                <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.model"/></td>
-                <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.range"/></td>
-                <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.type"/></td>
-                <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.unit"/></td>
-                <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.location"/></td>
-                <td align="center" style="border-color: #8381eb"<fmt:message key="table.sensor.description"/></td>
+    <div class="container-fluid">
+        <div class="col-md-6 col-md-offset-6">
+            <table class="table table-condensed table-bordered">
+                <tr>
+                    <c:if test="${not empty user  and  (user.roleId == 6)}">
+                        <td align="center" style="border-color: #8381eb"><fmt:message key="blank"/></td>
+                    </c:if>
+                    <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.title"/></td>
+                    <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.model"/></td>
+                    <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.range"/></td>
+                    <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.type"/></td>
+                    <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.unit"/></td>
+                    <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.location"/></td>
+                    <td align="center" style="border-color: #8381eb"
+                        <fmt:message key="table.sensor.description"/></td>
 
 
-                <c:if test="${not empty user  and  (user.roleId == 6)}">
-                    <td align="center" style="border-color: #8381eb"><fmt:message key="blank"/></td>
-                </c:if>
-            </tr>
-            <c:forEach items="${sensorsList}" varStatus="сounter">
+                    <c:if test="${not empty user  and  (user.roleId == 6)}">
+                        <td align="center" style="border-color: #8381eb"><fmt:message key="blank"/></td>
+                    </c:if>
+                </tr>
+                <c:forEach items="${sensorsList}" varStatus="сounter">
                 <tr>
                     <form action="/controller" method="post">
                         <input type="hidden" name="action" value="edit_sensor">
 
                         <td align="center"
-                        style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].id}</td>
+                            style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].id}</td>
 
                         <c: var="a" items="${sensorsList[сounter.count-1].id}">
 
-                    <c:if test="${not empty user  and  (user.roleId == 6)}">
-                        <td align="center" style="vertical-align: middle; border-color: #dae5ff">
-                                <button type="submit"  class="btn btn-link" name="sensorId" value=${sensorsList[сounter.count-1].id}>edit  </button>
+                            <c:if test="${not empty user  and  (user.roleId == 6)}">
+                            <td align="center" style="vertical-align: middle; border-color: #dae5ff">
+                                <button type="submit" class="btn btn-link" name="sensorId"
+                                        value=${sensorsList[сounter.count-1].id}>edit
+                                </button>
 
-                        </td>
-                    </c:if>
+                            </td>
+                            </c:if>
                     </form>
 
                     <td align="center"
@@ -89,7 +92,8 @@
                             <form action="/controller" method="post">
                                 <input type="hidden" name="action" value="edit_sensor">
 
-                                <button type="submit"  class="btn btn-link" name="sensorId" value="${sensorsList[counter.count-1].id}" ><img src="../images/delete.png">
+                                <button type="submit" class="btn btn-link" name="sensorId"
+                                        value="${sensorsList[counter.count-1].id}"><img src="../images/delete.png">
 
                                 </button>
                             </form>
@@ -99,33 +103,34 @@
 
                 </tr>
 
-        </table>
+            </table>
 
-        <nav aria-label="...">
-            <ul class="pager">
-                <li class="previous${leftPageClass}"><a href="${leftPage}"><fmt:message key="page.previous"/></a></li>
-                <li class="next${rightPageClass}"><a href="${rightPage}"><fmt:message key="page.next"/></a></li>
-            </ul>
-        </nav>
+            <nav aria-label="...">
+                <ul class="pager">
+                    <li class="previous${leftPageClass}"><a href="${leftPage}"><fmt:message key="page.previous"/></a>
+                    </li>
+                    <li class="next${rightPageClass}"><a href="${rightPage}"><fmt:message key="page.next"/></a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
 
-   <%--
-    <c:if test="${not empty user  and  (user.roleId == 6)}">
-<div class="container-fluid">
-    <div class="col-md-6 col-md-offset-6">
-        <table class="table table-condensed table-bordered">
-    <td align="center" style="vertical-align: middle; border-color: #dae5ff">
-        <form action="/controller" method="post">
-            <input type="hidden" name="action" value="show_admin_page">
+    <%--
+     <c:if test="${not empty user  and  (user.roleId == 6)}">
+ <div class="container-fluid">
+     <div class="col-md-6 col-md-offset-6">
+         <table class="table table-condensed table-bordered">
+     <td align="center" style="vertical-align: middle; border-color: #dae5ff">
+         <form action="/controller" method="post">
+             <input type="hidden" name="action" value="show_admin_page">
 
-            <button type="submit" class="btn btn-link"><fmt:message key="nav.admin"/></button>
-        </form>
-    </td>
-        </table>
-    </div>
-</div>
-            </c:if>--%>
+             <button type="submit" class="btn btn-link"><fmt:message key="nav.admin"/></button>
+         </form>
+     </td>
+         </table>
+     </div>
+ </div>
+             </c:if>--%>
 
 </c:if>
 

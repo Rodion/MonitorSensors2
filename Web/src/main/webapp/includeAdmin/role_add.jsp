@@ -18,7 +18,8 @@
                 <div class="form-group">
                     <label for="role" class="col-sm-2 control-label"><fmt:message key="add.role.form.role"/></label>
                     <div class="col-sm-10">
-                        <input type="text" id="role" name="role" class="form-control" placeholder="<fmt:message key="add.role.form.role.placeholder"/>"
+                        <input type="text" id="role" name="role" class="form-control"
+                               placeholder="<fmt:message key="add.role.form.role.placeholder"/>"
                                maxlength="10" required pattern="[A-Z]?[a-z]{1,10}">
                         <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.role.name"/></b>
                     </div>

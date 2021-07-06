@@ -8,8 +8,8 @@
     <title><fmt:message key="title.show.all.user.page"/></title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-       </head>
-       <body>
+</head>
+<body>
 
 <%@ include file="../include/navbar.jsp" %>
 <%@ include file="../include/home.jsp" %>
@@ -32,11 +32,11 @@
                     <td align="center" style="border-color: #dae5ff">${sensorsList[сounter.count-1].name}</td>
                     <td align="center" style="border-color: #dae5ff">${sensorsList[сounter.count-1].model}</td>
 
-                </td>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
-     <a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a>
+        <a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a>
     </div>
 </div>
 <br/>

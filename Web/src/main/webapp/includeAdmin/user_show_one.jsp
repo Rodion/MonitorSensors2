@@ -7,8 +7,8 @@
 <html>
 <head>
     <script type="text/javascript" src="../../js/validator.js"></script>
-        <title><fmt:message key="title.user.page"/></title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <title><fmt:message key="title.user.page"/></title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -55,7 +55,6 @@
                 <div class="row">
 
                     <div class="col-md-6 col-md-offset-3">
-
 
 
                     </div>
@@ -106,19 +105,22 @@
                         <br/>
                         <br/>
                         <br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a> &nbsp;   <a href="/controller?action=show_delete_user_page" class="btn btn-default"><fmt:message key="delete.user"/></a>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
+                            href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message
+                            key="continue"/></a> &nbsp; <a href="/controller?action=show_delete_user_page"
+                                                           class="btn btn-default"><fmt:message key="delete.user"/></a>
                     </div>
                 </div>
 
             </div>
 
-                <br/>
-                <br/>
+            <br/>
+            <br/>
             <%@ include file="../include/home.jsp" %>
-                <br/>
-                <br/>
+            <br/>
+            <br/>
 
-             <%@ include file="../include/footer_admin.jsp" %>
+            <%@ include file="../include/footer_admin.jsp" %>
 
 </body>
 </html>

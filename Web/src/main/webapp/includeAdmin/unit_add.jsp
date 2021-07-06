@@ -19,8 +19,10 @@
                 <div class="form-group">
                     <label for="unit" class="col-sm-4 control-label"><fmt:message key="add.unit.form"/></label>
                     <div class="col-sm-8">
-                        <input type="text" id="unit" name="unit" class="form-control" placeholder="<fmt:message key="add.unit.form.placeholder"/>"
-                               maxlength="60" required pattern="~^(?:(?:https?)://(?:[a-z0-9_-]{1,32}(?::[a-z0-9_-]{1,32})?@)?)?(?:(?:[a-z0-9-]{1,128}\.)+(?:ru|su|com|net|org|mil|edu|arpa|gov|biz|info|aero|inc|name|[a-z]{2})|(?!0)(?:(?!0[^.]|255)[0-9]{1,3}\.){3}(?!0|255)[0-9]{1,3})(?:/[a-z0-9.,_@%&?+=\~/-]*)?(?:#[^ '\&]*)?$~i">
+                        <input type="text" id="unit" name="unit" class="form-control"
+                               placeholder="<fmt:message key="add.unit.form.placeholder"/>"
+                               maxlength="60" required
+                               pattern="~^(?:(?:https?)://(?:[a-z0-9_-]{1,32}(?::[a-z0-9_-]{1,32})?@)?)?(?:(?:[a-z0-9-]{1,128}\.)+(?:ru|su|com|net|org|mil|edu|arpa|gov|biz|info|aero|inc|name|[a-z]{2})|(?!0)(?:(?!0[^.]|255)[0-9]{1,3}\.){3}(?!0|255)[0-9]{1,3})(?:/[a-z0-9.,_@%&?+=\~/-]*)?(?:#[^ '\&]*)?$~i">
                         <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.unit"/></b>
                     </div>
                 </div>

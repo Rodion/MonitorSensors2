@@ -22,35 +22,48 @@
                 <input type="hidden" name="action" value="register">
 
                 <div class="form-group">
-                    <label for="first_nameForm" class="col-sm-3 control-label"><fmt:message key="register.form.first.name"/></label>
+                    <label for="first_nameForm" class="col-sm-3 control-label"><fmt:message
+                            key="register.form.first.name"/></label>
                     <div class="col-sm-9">
-                        <input type="text" id="first_nameForm" name="first_name" class="form-control" placeholder="<fmt:message key="register.form.first.name.placeholder"/>"
-                               onKeyup="checkData('first_name')" maxlength="10" required pattern="([A-Z]?[a-z]{1,10})|([А-ЯЁ]?[а-яё]{1,10})">
-                        <b id="first_name" style="color: red; font-size: 10px"><fmt:message key="validation.first.name"/></b>
+                        <input type="text" id="first_nameForm" name="first_name" class="form-control"
+                               placeholder="<fmt:message key="register.form.first.name.placeholder"/>"
+                               onKeyup="checkData('first_name')" maxlength="10" required
+                               pattern="([A-Z]?[a-z]{1,10})|([А-ЯЁ]?[а-яё]{1,10})">
+                        <b id="first_name" style="color: red; font-size: 10px"><fmt:message
+                                key="validation.first.name"/></b>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="last_nameForm" class="col-sm-3 control-label"><fmt:message key="register.form.last.name"/></label>
+                    <label for="last_nameForm" class="col-sm-3 control-label"><fmt:message
+                            key="register.form.last.name"/></label>
                     <div class="col-sm-9">
-                        <input type="text" id="last_nameForm" name="last_name" class="form-control" placeholder="<fmt:message key="register.form.last.name.placeholder"/>"
-                               onKeyup="checkData('last_name')" maxlength="10" required pattern="([A-Z]?[a-z]{1,10})|([А-ЯЁ]?[а-яё]{1,10})">
-                        <b id="last_name" style="color: red; font-size: 10px"><fmt:message key="validation.last.name"/></b>
+                        <input type="text" id="last_nameForm" name="last_name" class="form-control"
+                               placeholder="<fmt:message key="register.form.last.name.placeholder"/>"
+                               onKeyup="checkData('last_name')" maxlength="10" required
+                               pattern="([A-Z]?[a-z]{1,10})|([А-ЯЁ]?[а-яё]{1,10})">
+                        <b id="last_name" style="color: red; font-size: 10px"><fmt:message
+                                key="validation.last.name"/></b>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="loginForm" class="col-sm-3 control-label"><fmt:message key="register.form.login"/></label>
+                    <label for="loginForm" class="col-sm-3 control-label"><fmt:message
+                            key="register.form.login"/></label>
                     <div class="col-sm-9">
-                        <input type="text" id="loginForm" name="login" class="form-control" placeholder="<fmt:message key="register.form.login.placeholder"/>"
-                               onKeyup="checkData('login')" maxlength="6"  required pattern="[a-zA-Z0-9]{3,6}">
+                        <input type="text" id="loginForm" name="login" class="form-control"
+                               placeholder="<fmt:message key="register.form.login.placeholder"/>"
+                               onKeyup="checkData('login')" maxlength="6" required pattern="[a-zA-Z0-9]{3,6}">
                         <b id="login" style="color: red; font-size: 10px"><fmt:message key="validation.login"/></b>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="passwordForm" class="col-sm-3 control-label"><fmt:message key="register.form.password"/></label>
+                    <label for="passwordForm" class="col-sm-3 control-label"><fmt:message
+                            key="register.form.password"/></label>
                     <div class="col-sm-9">
-                        <input name="password" id="passwordForm" type="password" class="form-control" placeholder="<fmt:message key="register.form.password.placeholder"/>"
+                        <input name="password" id="passwordForm" type="password" class="form-control"
+                               placeholder="<fmt:message key="register.form.password.placeholder"/>"
                                onKeyUp="checkData('password')" maxlength="6" required pattern="[a-zA-Z0-9._*]{3,6}">
-                        <b id="password" style="color: red; font-size: 10px;"><fmt:message key="validation.password"/></b>
+                        <b id="password" style="color: red; font-size: 10px;"><fmt:message
+                                key="validation.password"/></b>
                     </div>
                 </div>
 

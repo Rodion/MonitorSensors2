@@ -6,11 +6,11 @@
 <br/>
 <nav class="navbar navbar-default navbar-fixed-bottom" style="background: #20B2AA">
     <div class="container-fluid">
-      <form class="navbar-form navbar-right" action="/controller">
+        <form class="navbar-form navbar-right" action="/controller">
             <input type="hidden" name="action" value="show_admin_page">
-           <%--  <form class="navbar-form navbar-right" action="/index">--%>
+            <%--  <form class="navbar-form navbar-right" action="/index">--%>
 
-<br/>
+            <br/>
             <button type="submit" class="btn btn-default"><fmt:message key="nav.home"/></button>
 
         </form>
@@ -19,6 +19,6 @@
 <br/>
 <br/>
 <br/>
- <script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/jquery-3.2.0.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 

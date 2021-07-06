@@ -17,19 +17,23 @@
             <form action="/controller" method="post" class="form-horizontal">
                 <input type="hidden" name="action" value="login">
                 <div class="form-group">
-                    <label for="loginForm" class="col-sm-2 control-label"><fmt:message key="register.form.login"/></label>
+                    <label for="loginForm" class="col-sm-2 control-label"><fmt:message
+                            key="register.form.login"/></label>
                     <div class="col-sm-10">
-                        <input type="text" id="loginForm" name="login" class="form-control" placeholder="<fmt:message key="register.form.login.placeholder"/>"
+                        <input type="text" id="loginForm" name="login" class="form-control"
+                               placeholder="<fmt:message key="register.form.login.placeholder"/>"
                                maxlength="6" required pattern="[a-zA-Z0-9]{3,6}">
                         <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.login"/></b>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="passwordForm" class="col-sm-2 control-label"><fmt:message key="register.form.password"/></label>
+                    <label for="passwordForm" class="col-sm-2 control-label"><fmt:message
+                            key="register.form.password"/></label>
                     <div class="col-sm-10">
-                        <input name="password" id="passwordForm" type="password" class="form-control" placeholder="<fmt:message key="register.form.password.placeholder"/>"
+                        <input name="password" id="passwordForm" type="password" class="form-control"
+                               placeholder="<fmt:message key="register.form.password.placeholder"/>"
                                maxlength="6" required pattern="[a-zA-Z0-9._*]{3,6}"/>
-                        <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.password" /></b>
+                        <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.password"/></b>
                     </div>
                 </div>
                 <div class="form-group">

@@ -14,7 +14,6 @@
 <%@ include file="../include/navbar.jsp" %>
 
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
@@ -35,13 +34,12 @@
                         </div>
                     </div>
                 </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
 
-
-<%@ include file="../include/home.jsp" %>
+    <%@ include file="../include/home.jsp" %>
 </body>
 </html>
 

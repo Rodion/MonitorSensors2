@@ -29,10 +29,10 @@
                                maxlength="3" required pattern="[0-9]{1,3}">
                     </div>
                 </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-9">
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
 
-                            <button type="submit" class="btn btn-primary"><fmt:message key="delete.unit"/></button>
+                        <button type="submit" class="btn btn-primary"><fmt:message key="delete.unit"/></button>
 
                     </div>
                 </div>

@@ -58,13 +58,13 @@
                     </div>
                 </div>
 
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-<a href="/Controller?command=gotoadminpage" class="btn btn-default"><fmt:message key="continue"/></a> &nbsp;&nbsp;&nbsp;
+    <a href="/Controller?command=gotoadminpage" class="btn btn-default"><fmt:message key="continue"/></a> &nbsp;&nbsp;&nbsp;
 
-<%@ include file="../include/footer.jsp" %>
+    <%@ include file="../include/footer.jsp" %>
 </body>
 </html>
 

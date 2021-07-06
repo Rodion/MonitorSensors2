@@ -120,7 +120,7 @@
 <a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a>
 <br/>
 <br/>
-<%@ include file="../include/footer.jsp" %>
+
 </body>
 </html>
 

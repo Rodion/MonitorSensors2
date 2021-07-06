@@ -8,7 +8,7 @@
 <body>
 
 
- <c:redirect url="controller?action=show_all_user_sensors_changing"/>
+<c:redirect url="controller?action=show_all_user_sensors_changing"/>
 
 </body>
 </html>

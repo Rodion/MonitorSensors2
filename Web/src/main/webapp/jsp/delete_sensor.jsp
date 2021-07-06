@@ -29,7 +29,8 @@
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.id}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.name}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.model}</td>
-                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.range_to-sensor.range_from}</td>
+                <td align="center"
+                    style="vertical-align: middle; border-color: #dae5ff">${sensor.range_to-sensor.range_from}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.type}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.unit}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.location}</td>
@@ -54,7 +55,8 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <br/>
-                                    <button type="submit" class="btn btn-primary"><fmt:message key="delete.sensor"/></button>
+                                    <button type="submit" class="btn btn-primary"><fmt:message
+                                            key="delete.sensor"/></button>
                                 </div>
                             </div>
                         </div>
@@ -63,10 +65,9 @@
             </div>
 
 
-
-        <a href="../index.jsp" class="btn btn-default"><fmt:message key="continue"/></a>
-    </div>
-    <%@ include file="../include/footer.jsp" %>
+            <a href="../index.jsp" class="btn btn-default"><fmt:message key="continue"/></a>
+        </div>
+        <%@ include file="../include/footer.jsp" %>
 </body>
 </html>
 

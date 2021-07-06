@@ -22,12 +22,12 @@
                 </form>
             </c:if>
 
-<c:if test="${not empty user and user.roleId == 6}">
-    <form action="/controller" method="post" class="navbar-form navbar-right">
-        <input type="hidden" name="action" value="show_admin_page">
-        <button type="submit" class="btn btn-default"><fmt:message key="nav.admin"/></button>
-    </form>
-</c:if>
-</div>
-</div>
+            <c:if test="${not empty user and user.roleId == 6}">
+                <form action="/controller" method="post" class="navbar-form navbar-right">
+                    <input type="hidden" name="action" value="show_admin_page">
+                    <button type="submit" class="btn btn-default"><fmt:message key="nav.admin"/></button>
+                </form>
+            </c:if>
+        </div>
+    </div>
 </nav>

@@ -23,13 +23,14 @@
                 <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.type"/></td>
                 <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.unit"/></td>
                 <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.location"/></td>
-            <%--     <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.description"/></td> --%>
+                <%--     <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.description"/></td> --%>
             </tr>
             <tr>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.id}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.name}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.model}</td>
-                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.range_to-sensor.range_from}</td>
+                <td align="center"
+                    style="vertical-align: middle; border-color: #dae5ff">${sensor.range_to-sensor.range_from}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.type}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.unit}</td>
                 <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.location}</td>

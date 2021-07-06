@@ -13,12 +13,13 @@
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="/controller?action=show_all_users"><fmt:message key="nav.user.show.all"/></a></li>
-                    <li><a href="/controller?action=show_user_change_role_page"><fmt:message key="nav.user.change"/></a></li>
+                    <li><a href="/controller?action=show_user_change_role_page"><fmt:message key="nav.user.change"/></a>
+                    </li>
                     <li class="divider"></li>
 
-<%--
-                    <li><a href="//controller?action=show_user_change_role_page"><fmt:message key="nav.user.change"/></a></li>
-                    <li class="divider"></li>--%>
+                    <%--
+                                        <li><a href="//controller?action=show_user_change_role_page"><fmt:message key="nav.user.change"/></a></li>
+                                        <li class="divider"></li>--%>
 
                     <li><a href="#"><fmt:message key="search.form.user"/></a>
 
@@ -42,7 +43,8 @@
                         </form>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="/controller?action=show_user_change_role_page"><fmt:message key="search.form.user"/></a>
+                    <li><a href="/controller?action=show_user_change_role_page"><fmt:message
+                            key="search.form.user"/></a>
 
                         <form action="/controller" method="post" class="form-horizontal">
                             <input type="hidden" name="action" value="find_user">
@@ -88,7 +90,8 @@
                 <ul class="dropdown-menu">
                     <li><a href="/controller?action=show_all_sensors"><fmt:message key="nav.sensor.show.all"/></a>
 
-                    <li><a href="/controller?action=show_delete_sensor_page"><fmt:message key="nav.sensor.delete"/></a></li>
+                    <li><a href="/controller?action=show_delete_sensor_page"><fmt:message key="nav.sensor.delete"/></a>
+                    </li>
 
                     <li><a href="/controller?action=show_add_sensor_page"><fmt:message key="nav.sensor.add"/></a></li>
                     <li class="divider"></li>
@@ -101,7 +104,8 @@
                                 <div class="col-sm-8">
                                     <select class="form-control" id="sensorForm" name="sensorId">
                                         <c:forEach items="${sensorsList}" var="sensor">
-                                            <option value="${sensor.id}"><fmt:message key="update.sensor.id"/> ${sensor.id},
+                                            <option value="${sensor.id}"><fmt:message
+                                                    key="update.sensor.id"/> ${sensor.id},
                                                 <fmt:message key="update.sensor.title"/> ${sensor.name}, <fmt:message
                                                         key="update.sensor.model"/> ${sensor.model}
 
@@ -131,8 +135,8 @@
                     </li>
                     <li><a href="../includeAdmin/type_add.jsp"><fmt:message key="nav.type.add"/></a></li>
                     <li><a href="../includeAdmin/type_delete.jsp"><fmt:message key="nav.type.delete"/></a></li>
-                <%--    <li><a href="/controller?action=get_type_data"><fmt:message key="nav.type.edit"/></a>
-                    </li> --%>
+                    <%--    <li><a href="/controller?action=get_type_data"><fmt:message key="nav.type.edit"/></a>
+                        </li> --%>
 
                 </ul>
             </li>
@@ -152,8 +156,8 @@
                 </li>
             </td>
 
-        <%--exit/admin's page--%>
-        <c:if test="${not empty user and user.roleId == 6}">
+            <%--exit/admin's page--%>
+            <c:if test="${not empty user and user.roleId == 6}">
             <form action="/controller" class="navbar-form navbar-right">
                 <fmt:message key="nav.welcome"/><ctg:info user="${user}"/>
                 <input type="hidden" name="action" value="logout">
@@ -163,7 +167,7 @@
                 <input type="hidden" name="action" value="show_admin_page">
                 <button type="submit" class="btn btn-default"><fmt:message key="nav.admin"/></button>
             </form>
-        </c:if>
+            </c:if>
     </div>
 </nav>
 

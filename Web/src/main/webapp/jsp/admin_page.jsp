@@ -44,20 +44,21 @@
         </div>
 --%>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="col-md-10 col-md-offset-1">
-                        <table class="table table-condensed table-bordered">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="col-md-10 col-md-offset-1">
+                <table class="table table-condensed table-bordered">
                     <tr class="active">
 
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.title"/></td>
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.model"/></td>
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.range"/></td>
-                      <%--  <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.type"/></td>
-                        <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.unit"/></td>
-                        <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.location"/></td>--%>
-                     <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.description"/></td>
+                        <%--  <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.type"/></td>
+                          <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.unit"/></td>
+                          <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor.location"/></td>--%>
+                        <td align="center" style="border-color: #8381eb"><fmt:message
+                                key="table.sensor.description"/></td>
                     </tr>
                     <c:forEach items="${sensorsList}" varStatus="сounter" end="3">
                         <tr class="active">
@@ -66,14 +67,14 @@
                                 style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].name}</td>
                             <td align="center"
                                 style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].model}</td>
-                     <td align="center"
+                            <td align="center"
                                 style="vertical-align: middle; border-color: #8381eb">${(sensorsList[сounter.count-1].range_to)-(sensorsList[сounter.count-1].range_from)}</td>
                             <td align="center"
-                        <%--        style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].type}</td>
-                            <td align="center"
-                                style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].unit}</td>
-                            <td align="center"
-                                style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].location}</td> --%>
+                                <%--        style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].type}</td>
+                                    <td align="center"
+                                        style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].unit}</td>
+                                    <td align="center"
+                                        style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].location}</td> --%>
                             <td align="center"
                                 style="vertical-align: middle; border-color: #8381eb">${sensorsList[сounter.count-1].description}</td>
 
@@ -89,7 +90,8 @@
                     <tr class="active">
 
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor_type.id"/></td>
-                        <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor_type.type"/></td>
+                        <td align="center" style="border-color: #8381eb"><fmt:message
+                                key="table.sensor_type.type"/></td>
 
                     </tr>
                     <c:forEach items="${sensorTypesList}" varStatus="сounter" end="3">
@@ -109,10 +111,11 @@
         <div class="col-md-4">
             <div class="col-md-10 col-md-offset-0">
                 <table class="table table-condensed table-bordered">
-                        <tr class="active">
+                    <tr class="active">
 
                         <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor_unit.id"/></td>
-                        <td align="center" style="border-color: #8381eb"><fmt:message key="table.sensor_unit.unit"/></td>
+                        <td align="center" style="border-color: #8381eb"><fmt:message
+                                key="table.sensor_unit.unit"/></td>
 
                     </tr>
                     <c:forEach items="${sensorUnitsList}" varStatus="сounter" end="3">
