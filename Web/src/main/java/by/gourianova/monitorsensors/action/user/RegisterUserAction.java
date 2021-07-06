@@ -1,7 +1,8 @@
 package by.gourianova.monitorsensors.action.user;
+
+import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
-import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.exception.ServiceException;
 import by.gourianova.monitorsensors.service.UserService;
 import by.gourianova.monitorsensors.util.PageConstant;
@@ -37,16 +38,16 @@ public class RegisterUserAction implements Action {
         user.setLastName(request.getParameter(LAST_NAME));
         user.setLogin(request.getParameter(LOGIN));
         user.setPassword(request.getParameter(PASSWORD));
-        user.setRoleId(new Integer(2));
+        user.setRoleId(new Integer(7));
 
         try {
-           if (userService.validateUser(user) != null){
+            if (userService.validateUser(user) != null) {
 
                 request.setAttribute(WRONG_REGISTER_DATA, userService.validateUser(user));
                 router.setPagePath(PageConstant.REGISTER_PAGE);
                 request.getSession().setAttribute(REFERRER, PageConstant.REGISTER_PAGE);
 
-            } else if (userService.registerUser(user)) {   System.out.println("++");
+            } else if (userService.registerUser(user)) {
                 User newUser = userService.findUserByLoginAndPassword(user.getLogin(), request.getParameter(PASSWORD));
                 session.setAttribute(USER, newUser);
                 router.setPagePath(PageConstant.FIRST_PAGE);

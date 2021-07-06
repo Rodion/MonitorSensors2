@@ -17,7 +17,8 @@ public class UserInfoTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
         try {
-            pageContext.getOut().write( " " + user.getFirstName());;
+            pageContext.getOut().write(" " + user.getFirstName());
+            ;
         } catch (IOException e) {
             e.printStackTrace();
         }

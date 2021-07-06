@@ -1,8 +1,8 @@
 package by.gourianova.monitorsensors.action.admin.role;
 
+import by.gourianova.monitorsensors.Role;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
-import by.gourianova.monitorsensors.Role;
 import by.gourianova.monitorsensors.exception.ServiceException;
 import by.gourianova.monitorsensors.service.RoleService;
 import by.gourianova.monitorsensors.util.PageConstant;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class AddRoleAction implements Action {
     private final static String ROLE = "role";
     private final static String MESSAGE = "message";
-    private final static String ADMIN_PAGE="/controller?action=show_admin_page";
+    private final static String ADMIN_PAGE = "/controller?action=show_admin_page";
     private RoleService roleService = new RoleService();
 
     @Override

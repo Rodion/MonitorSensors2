@@ -23,7 +23,7 @@ public class DeleteSensorAction implements Action {
         Integer id;
         try {
             id = Integer.parseInt(request.getParameter(SENSOR_ID));
-            System.out.println("id"+id);
+            System.out.println("id" + id);
             sensorService.deleteEntityById(id);
             router.setPagePath(ADMIN_PAGE);
             router.setRoute(Router.RouteType.REDIRECT);

@@ -3,7 +3,6 @@ package by.gourianova.monitorsensors.action.admin.sensor;
 import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
-
 import by.gourianova.monitorsensors.exception.ServiceException;
 import by.gourianova.monitorsensors.service.SensorService;
 import by.gourianova.monitorsensors.util.PageConstant;

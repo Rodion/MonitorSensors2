@@ -1,11 +1,10 @@
 package by.gourianova.monitorsensors.action.admin.user;
 
+import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
-import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.exception.ServiceException;
 import by.gourianova.monitorsensors.service.UserService;
-import by.gourianova.monitorsensors.util.MD5;
 import by.gourianova.monitorsensors.util.PageConstant;
 
 import javax.servlet.ServletException;
@@ -14,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class ChangeUserDataAction implements Action {
-  //  private final static String LOGIN = "login";
-   // private final static String PASSWORD = "password";
+    //  private final static String LOGIN = "login";
+    // private final static String PASSWORD = "password";
     private final static String MESSAGE = "message";
     private final static String USER_ID = "userId";
     private final static String ROLE_ID = "roleId";
@@ -28,8 +27,8 @@ public class ChangeUserDataAction implements Action {
         if (request.getParameter(USER_ID) != null) {
             user.setId(Integer.parseInt(request.getParameter(USER_ID)));
         }
-    //    password = request.getParameter(PASSWORD);
-     //   password = MD5.md5Encode(password);
+        //    password = request.getParameter(PASSWORD);
+        //   password = MD5.md5Encode(password);
         try {
             user.setId(Integer.parseInt(request.getParameter(USER_ID)));
             userService.updateUser(user);

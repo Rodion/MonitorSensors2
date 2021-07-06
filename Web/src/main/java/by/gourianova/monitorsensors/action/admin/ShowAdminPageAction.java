@@ -1,10 +1,16 @@
 package by.gourianova.monitorsensors.action.admin;
 
-import by.gourianova.monitorsensors.*;
+import by.gourianova.monitorsensors.Sensor;
+import by.gourianova.monitorsensors.SensorType;
+import by.gourianova.monitorsensors.SensorUnit;
+import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
 import by.gourianova.monitorsensors.exception.ServiceException;
-import by.gourianova.monitorsensors.service.*;
+import by.gourianova.monitorsensors.service.SensorService;
+import by.gourianova.monitorsensors.service.SensorTypeService;
+import by.gourianova.monitorsensors.service.SensorUnitService;
+import by.gourianova.monitorsensors.service.UserService;
 import by.gourianova.monitorsensors.util.PageConstant;
 
 import javax.servlet.RequestDispatcher;
@@ -35,12 +41,12 @@ public class ShowAdminPageAction implements Action {
         try {
             usersList = userService.findAll();
             sensorsList = sensorsService.findAll();
-            sensorUnitsList =  sensorUnitService.findAll();
-            sensorTypesList =  sensorTypeService.findAll();
+            sensorUnitsList = sensorUnitService.findAll();
+            sensorTypesList = sensorTypeService.findAll();
             request.setAttribute(USERS_LIST, usersList);
             request.setAttribute(SENSORS_LIST, sensorsList);
-            request.setAttribute(SENSORS_UNITS_LIST,  sensorUnitsList);
-            request.setAttribute(SENSORS_TYPES_LIST,  sensorTypesList);
+            request.setAttribute(SENSORS_UNITS_LIST, sensorUnitsList);
+            request.setAttribute(SENSORS_TYPES_LIST, sensorTypesList);
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(PageConstant.ADMIN_PAGE);
             requestDispatcher.forward(request, response);

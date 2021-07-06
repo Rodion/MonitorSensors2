@@ -1,12 +1,10 @@
 package by.gourianova.monitorsensors.action.admin.sensor;
 
 import by.gourianova.monitorsensors.SensorType;
-import by.gourianova.monitorsensors.SensorUnit;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
 import by.gourianova.monitorsensors.exception.ServiceException;
 import by.gourianova.monitorsensors.service.SensorTypeService;
-import by.gourianova.monitorsensors.service.SensorUnitService;
 import by.gourianova.monitorsensors.util.PageConstant;
 
 import javax.servlet.http.HttpServletRequest;

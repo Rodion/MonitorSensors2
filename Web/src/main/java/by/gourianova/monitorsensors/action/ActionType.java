@@ -1,16 +1,16 @@
 package by.gourianova.monitorsensors.action;
 
-import by.gourianova.monitorsensors.action.admin.user.ShowChangeRolePage;
+import by.gourianova.monitorsensors.action.admin.ShowAdminPageAction;
+import by.gourianova.monitorsensors.action.admin.role.AddRoleAction;
+import by.gourianova.monitorsensors.action.admin.role.DeleteRoleAction;
 import by.gourianova.monitorsensors.action.admin.sensor.*;
 import by.gourianova.monitorsensors.action.admin.user.*;
 import by.gourianova.monitorsensors.action.locale.ChangeLocaleAction;
-import by.gourianova.monitorsensors.action.sensor.*;
-import by.gourianova.monitorsensors.action.admin.ShowAdminPageAction;
 import by.gourianova.monitorsensors.action.sensor.ShowAllSensorsByPageAction;
-import by.gourianova.monitorsensors.action.user.*;
-
-import by.gourianova.monitorsensors.action.admin.role.AddRoleAction;
-import by.gourianova.monitorsensors.action.admin.role.DeleteRoleAction;
+import by.gourianova.monitorsensors.action.sensor.*;
+import by.gourianova.monitorsensors.action.user.LoginUserAction;
+import by.gourianova.monitorsensors.action.user.LogoutUserAction;
+import by.gourianova.monitorsensors.action.user.RegisterUserAction;
 
 
 public enum ActionType {
@@ -22,14 +22,13 @@ public enum ActionType {
 
     ADD_SENSOR(new AddSensorAction()),
     ADD_TYPE(new AddTypeAction()),
-     ADD_UNIT(new AddUnitAction()),
+    ADD_UNIT(new AddUnitAction()),
 
     EDIT_SENSOR(new EditSensorAction()),
 
 
     CHANGE_USER_ROLE(new ChangeUserRoleAction()),
     CHANGE_USER_DATA(new ChangeUserDataAction()),
-
 
 
     SHOW_ALL_USER_SENSORS_CHANGING(new ShowAllUserSensorsAction()),
@@ -62,23 +61,21 @@ public enum ActionType {
 
     DELETE_UNIT(new DeleteUnitAction()),
 
-    SHOW_USER_CHANGE_ROLE_PAGE (new ShowChangeRolePage()),
+    SHOW_USER_CHANGE_ROLE_PAGE(new ShowChangeRolePage()),
 
     GET_USER_DATA(new GetUserDataAction()),
 
     GET_SENSORS_DATA(new GetSensorDataAction());
 
 
-
-
     Action action;
-
-    Action getAction() {
-        return action;
-    }
 
     ActionType(Action action) {
         this.action = action;
+    }
+
+    Action getAction() {
+        return action;
     }
 
 }

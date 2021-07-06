@@ -27,7 +27,7 @@ public class ShowAddSensorPageAction implements Action {
     public Router execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Router router = new Router();
         ArrayList<SensorType> typesList;
-        ArrayList<SensorUnit>  unitsList;
+        ArrayList<SensorUnit> unitsList;
         try {
             typesList = sensorTypeService.findAll();
             unitsList = sensorUnitService.findAll();

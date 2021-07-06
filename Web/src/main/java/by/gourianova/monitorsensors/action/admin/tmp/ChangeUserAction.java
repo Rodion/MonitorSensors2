@@ -1,13 +1,12 @@
 package by.gourianova.monitorsensors.action.admin.tmp;
 
 import by.gourianova.monitorsensors.Role;
+import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
-
-import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.exception.ServiceException;
-import by.gourianova.monitorsensors.service.UserService;
 import by.gourianova.monitorsensors.service.RoleService;
+import by.gourianova.monitorsensors.service.UserService;
 import by.gourianova.monitorsensors.util.PageConstant;
 
 import javax.servlet.ServletException;
@@ -22,7 +21,7 @@ public class ChangeUserAction implements Action {
     private final static String ROLE_ID = "roleId";
     private final static String MESSAGE = "message";
     private final static String ROLES_LIST = "rolesList";
-    private final static String ADMIN_PAGE="/controller?action=show_admin_page";
+    private final static String ADMIN_PAGE = "/controller?action=show_admin_page";
     private UserService userService = new UserService();
     private RoleService roleService = new RoleService();
 

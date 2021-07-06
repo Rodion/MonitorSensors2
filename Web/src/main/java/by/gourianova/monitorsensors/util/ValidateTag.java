@@ -7,12 +7,11 @@ import java.util.ResourceBundle;
 
 
 public class ValidateTag extends TagSupport {
-    private String input;
     private final static String WRONG_FIRST_NAME = "firstName";
     private final static String WRONG_LAST_NAME = "lastName";
     private final static String WRONG_LOGIN = "login";
     private final static String WRONG_PASSWORD = "password";
-
+    private String input;
 
     public void setInput(String input) {
         this.input = input;
@@ -34,7 +33,7 @@ public class ValidateTag extends TagSupport {
             if (input.equals(WRONG_PASSWORD)) {
                 pageContext.getOut().write(bundle.getString("alert.wrong.password"));
             }
-           
+
         } catch (IOException e) {
             e.printStackTrace();
         }

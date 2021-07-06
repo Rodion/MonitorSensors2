@@ -17,8 +17,9 @@ import java.io.IOException;
 public class DeleteUserAction implements Action {
     private final static String USER_ID = "userId";
     private final static String MESSAGE = "message";
+    private final static String ADMIN_PAGE = "/controller?action=show_admin_page";
     private final UserService userService = new UserService();
-    private final static String ADMIN_PAGE="/controller?action=show_admin_page";
+
     @Override
     public Router execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Router router = new Router();

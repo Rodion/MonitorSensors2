@@ -4,7 +4,6 @@ import by.gourianova.monitorsensors.SensorType;
 import by.gourianova.monitorsensors.SensorUnit;
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.controller.Router;
-
 import by.gourianova.monitorsensors.exception.ServiceException;
 import by.gourianova.monitorsensors.service.SensorTypeService;
 import by.gourianova.monitorsensors.service.SensorUnitService;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-
 
 
 public class GetSensorDataAction implements Action {

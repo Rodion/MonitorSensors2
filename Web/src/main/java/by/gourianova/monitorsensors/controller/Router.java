@@ -1,12 +1,8 @@
 package by.gourianova.monitorsensors.controller;
 
 public class Router {
-    public enum RouteType {
-        FORWARD, REDIRECT
-    }
     private String pagePath;
     private RouteType route = RouteType.FORWARD;
-
 
     public String getPagePath() {
         return pagePath;
@@ -25,5 +21,9 @@ public class Router {
             this.route = RouteType.FORWARD;
         }
         this.route = route;
+    }
+
+    public enum RouteType {
+        FORWARD, REDIRECT
     }
 }
