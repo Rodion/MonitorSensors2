@@ -19,8 +19,11 @@ public class SensorDao extends AbstractDao<Sensor> {
     // private final static String SQL_FIND_ALL_SENSORS = "SELECT sensors.Id, sensors.Name, sensors.Model, sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit, sensors.Location, sensors.Description FROM sensors, sensor_types, sensor_units WHERE sensors.Type_Id = sensor_types.Id AND sensors.Unit_Id = sensor_units.Id;";
     private final static String SQL_FIND_ALL_SENSORS = "SELECT*  FROM monitorsensors.sensors;";
 
-    private final static String SQL_FIND_BY_PAGE = "SELECT * FROM monitorsensors.sensors ORDER BY sensors.Id LIMIT 4 OFFSET ?;";
-    //TODO  select only *?
+    private final static String SQL_FIND_BY_PAGE = "SELECT * FROM monitorsensors.sensors ORDER BY sensors.Id LIMIT ? OFFSET ?;";
+
+
+
+
    // private final static String SQL_FIND_BY_ID = "SELECT sensors.Id , sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensors.Type, sensors.Unit,  sensors.Location, sensors.Description   FROM monitorsensors.sensors WHERE sensors.Id = ?  ORDER BY sensors.Id;";
     private final static String SQL_FIND_BY_ID = "SELECT * FROM sensors WHERE id = ?;";
   //private final static String SQL_FIND_BY_ID = "SELECT sensors.Id , sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensors.Type, sensors.Unit,  sensors.Location, sensors.Description   FROM monitorsensors.sensors WHERE sensors.Id = ?  ORDER BY sensors.Id;";
