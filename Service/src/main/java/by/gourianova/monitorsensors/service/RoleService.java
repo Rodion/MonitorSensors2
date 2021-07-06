@@ -1,7 +1,6 @@
 package by.gourianova.monitorsensors.service;
 
 
-
 import by.gourianova.monitorsensors.Role;
 import by.gourianova.monitorsensors.dao.RoleDao;
 import by.gourianova.monitorsensors.exception.DaoException;
@@ -30,7 +29,7 @@ public class RoleService {
     }
 
 
-    public boolean deleteEntityById(Integer id) throws ServiceException{
+    public boolean deleteEntityById(Integer id) throws ServiceException {
         try {
             return roleDao.deleteEntityById(id);
         } catch (DaoException e) {

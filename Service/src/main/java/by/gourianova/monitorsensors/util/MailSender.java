@@ -10,7 +10,6 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 
-
 public class MailSender {
     private final static Logger LOGGER = LogManager.getLogger(MailSender.class);
     private final static String USER_MAIL = "tgourianova@mail.ru";

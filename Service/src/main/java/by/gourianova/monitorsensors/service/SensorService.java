@@ -1,11 +1,13 @@
 package by.gourianova.monitorsensors.service;
 
 
+import by.gourianova.monitorsensors.Sensor;
 import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.dao.SensorDao;
 import by.gourianova.monitorsensors.exception.DaoException;
 import by.gourianova.monitorsensors.exception.ServiceException;
-import by.gourianova.monitorsensors.Sensor;
+import by.gourianova.monitorsensors.util.ValidateSensor;
+import by.gourianova.monitorsensors.util.ValidateUser;
 
 import java.util.ArrayList;
 
@@ -40,6 +42,7 @@ public class SensorService {
 
         return sensor;
     }
+
     public Sensor findSensorById(Integer id) throws ServiceException {
         try {
             return sensorDao.findEntityById(id);
@@ -50,18 +53,23 @@ public class SensorService {
 
     public boolean createSensor(Sensor sensor) throws ServiceException {
         try {
-           return sensorDao.createEntity(sensor);
+            return sensorDao.createEntity(sensor);
         } catch (DaoException e) {
             throw new ServiceException("Transaction failed in createApp method", e);
         }
     }
-    public boolean deleteEntityById(Integer id) throws ServiceException {
 
-        try { return  sensorDao.deleteEntityById(id);
+    public boolean deleteEntityById(Integer id) throws ServiceException {
+        try {
+            return sensorDao.deleteEntityById(id);
         } catch (DaoException e) {
             throw new ServiceException("Transaction failed in delete method", e);
         }
 
-
     }
+    public String validateSensor(Sensor Sensor) throws ServiceException {
+
+        return ValidateSensor.validate(Sensor);
+    }
+
 }
