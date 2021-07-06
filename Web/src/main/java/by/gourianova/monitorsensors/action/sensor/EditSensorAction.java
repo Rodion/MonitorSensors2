@@ -24,7 +24,7 @@ public class EditSensorAction implements Action {
     public Router execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Router router = new Router();
         try {
-            System.out.println(request.getParameter(SENSOR_ID) + "sensorId");
+
             Sensor sensor = sensorService.findSensorById(Integer.parseInt(request.getParameter(SENSOR_ID)));
             request.getSession().setAttribute(SENSOR, sensor);
             router.setPagePath(PageConstant.EDIT_SENSOR);

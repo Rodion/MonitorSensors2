@@ -36,6 +36,10 @@ public enum ActionType {
     SHOW_ALL_TYPES(new ShowAllTypesAction()),
     SHOW_ALL_SENSOR_UNITS(new ShowAllUnitsAction()),
     SHOW_DELETE_SENSOR_PAGE(new ShowDeleteSensorPageAction()),
+    SHOW_EDIT_SENSOR_PAGE(new  ShowEditSensorPageAction()),
+
+    UPDATE_SENSOR(new UpdateSensorAction()),
+    FIND_SENSOR(new FindSensorAction()),
 
     SHOW_ALL_USERS(new ShowAllUserAction()),
     SHOW_ALL_ROLES(new ShowAllRoleAction()),
