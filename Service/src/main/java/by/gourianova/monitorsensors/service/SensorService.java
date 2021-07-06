@@ -72,4 +72,11 @@ public class SensorService {
         return ValidateSensor.validate(Sensor);
     }
 
+    public void updateSensor(Sensor sensor) throws ServiceException {
+        try {
+            sensorDao.updateEntity(sensor);
+        } catch (DaoException e) {
+            throw new ServiceException("Transaction failed in updateUser method", e);
+        }
+    }
 }
