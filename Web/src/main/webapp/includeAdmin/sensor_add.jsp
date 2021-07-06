@@ -18,6 +18,33 @@
 <%@ include file="../include/navbar.jsp" %>
 
 
+<table class="table table-condensed table-bordered">
+    <tr>
+        <td align="center" style="border-color: #dae5ff"><fmt:message key="table.number"/></td>
+        <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.title"/></td>
+        <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.model"/></td>
+        <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.range"/></td>
+        <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.type"/></td>
+        <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.unit"/></td>
+        <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.location"/></td>
+        <%--     <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.description"/></td> --%>
+    </tr>
+    <tr>
+        <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.id}</td>
+        <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.name}</td>
+        <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.model}</td>
+        <td align="center"
+            style="vertical-align: middle; border-color: #dae5ff">${sensor.range_to-sensor.range_from}</td>
+        <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.type}</td>
+        <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.unit}</td>
+        <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.location}</td>
+        <%-- <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.description}</td>--%>
+    </tr>
+</table>
+<a href="../index.jsp" class="btn btn-default"><fmt:message key="continue"/></a>
+</div>
+
+
 <form action="/controller" method="post" class="form-horizontal">
     <input type="hidden" name="action" value="add_sensor">
 
@@ -120,7 +147,7 @@
 <a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a>
 <br/>
 <br/>
-<%@ include file="../include/footer.jsp" %>
+<%-- <%@ include file="../include/footer.jsp" %> --%>
 </body>
 </html>
 

@@ -50,7 +50,7 @@
                     </c:if>
                 </tr>
 
-                <c:forEach items="${sensorsList}" varStatus="сounter">
+                <c:forEach items="${sensorsList}" varStatus="сounter" >
                     <tr>
                         <c:if test="${not empty user  and  (user.roleId == 6)}">
                             <td align="center" style="vertical-align: middle; border-color: #dae5ff">
