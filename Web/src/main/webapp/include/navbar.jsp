@@ -15,8 +15,35 @@
                 </form>
             </c:if>
             <c:if test="${not empty user}">
+
+
                 <form action="/controller" class="navbar-form navbar-right">
-                    <fmt:message key="nav.welcome"/><ctg:info user="${user}"/>
+
+
+                    <input type="hidden" name="action" value="find_sensor">
+
+                    <div class="form-group">
+                             <div class="col-sm-9">
+                            <input type="text" id="find" name="findString" class="form-control"
+                                   placeholder="<fmt:message key="search.sensor.placeholder"/>"
+                                   onKeyup="checkData('find')"  maxlength="100" required pattern="[a-zA-Z0-9. ,-_*]{0,100}">
+                            <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.search.sensor"/></b>
+                        </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-default"><fmt:message key="nav.find.sensor"/></button>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+
+
+
+                <form action="/controller" class="navbar-form navbar-right">
+
+                      <fmt:message key="nav.welcome"/><ctg:info user="${user}"/>
                     <input type="hidden" name="action" value="logout">
                     <button type="submit" class="btn btn-default"><fmt:message key="nav.signout"/></button>
                 </form>

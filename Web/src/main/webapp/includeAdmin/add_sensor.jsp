@@ -2,6 +2,7 @@
 <%--@elvariable id="sensorUnitsList" type="java.util.ArrayList"--%>
 <%--@elvariable id="sensorOne" type="Sensor"--%>
 <%--@elvariable id="wrongRangeData" type="java.lang.String"--%>
+<%--@elvariable id="sensor" type="Sensor"--%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -19,7 +20,7 @@
 
 
 <form action="/controller" method="post" class="form-horizontal">
-    <input type="hidden" name="action" value="add_sensor">
+    <input type="hidden" name="action" value="update_sensor">
 
     <div class="form-group">
         <label for="title" class="col-sm-3 control-label"><fmt:message key="add.sensor.form.title"/></label>
@@ -116,6 +117,35 @@
                 <fmt:message key="validation.range.message"/>
     </div>
 </c:if>
+<div class="container-fluid">
+    <div class="col-md-6 col-md-offset-6">
+
+        <table class="table table-condensed table-bordered">
+            <tr>
+                <td align="center" style="border-color: #dae5ff"><fmt:message key="table.number"/></td>
+                <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.title"/></td>
+                <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.model"/></td>
+                <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.range"/></td>
+                <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.type"/></td>
+                <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.unit"/></td>
+                <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.location"/></td>
+                <%--     <td align="center" style="border-color: #dae5ff"><fmt:message key="table.sensor.description"/></td> --%>
+            </tr>
+            <tr>
+                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.id}</td>
+                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.name}</td>
+                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.model}</td>
+                <td align="center"
+                    style="vertical-align: middle; border-color: #dae5ff">${sensor.range_to-sensor.range_from}</td>
+                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.type}</td>
+                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.unit}</td>
+                <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.location}</td>
+                <%-- <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.description}</td>--%>
+            </tr>
+        </table>
+        <a href="../index.jsp" class="btn btn-default"><fmt:message key="continue"/></a>
+    </div>
+    <%@ include file="../include/footer.jsp" %>
 
 <a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a>
 <br/>

@@ -55,8 +55,8 @@
                         <c:if test="${not empty user  and  (user.roleId == 6)}">
                             <td align="center" style="vertical-align: middle; border-color: #dae5ff">
                                 <form action="/controller" method="post">
-                                    <input type="hidden" name="action" value="edit_sensor">
-                                    <button type="submit" class="btn btn-link" name="sensorId"
+                                    <input type="hidden" name="action" value="show_add_sensor_page">
+                                    <button type="submit" class="btn btn-link" id="sensorId" name="sensorId"
                                             value="${sensorsList[counter.count-1].id}">
 
                                         edit
@@ -88,7 +88,7 @@
 
                             <td align="center" style="vertical-align: middle; border-color: #dae5ff">
                                 <form action="/controller" method="post">
-                                    <input type="hidden" name="action" value="edit_sensor">
+                                    <input type="hidden" name="action" value="show_delete_sensor_page">
 
                                     <button type="submit" class="btn btn-link" name="sensorId"
                                             value="${sensorsList[counter.count-1].id}"><img src="../images/delete.png">
