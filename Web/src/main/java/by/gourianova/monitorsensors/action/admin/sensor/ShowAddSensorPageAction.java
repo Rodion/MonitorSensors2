@@ -19,6 +19,8 @@ import java.util.ArrayList;
 public class ShowAddSensorPageAction implements Action {
     private final static String TYPES_LIST = "sensorTypesList";
     private final static String UNITS_LIST = "sensorUnitsList";
+    private final static String SENSOR_ID = "sensorId";
+
     private final static String MESSAGE = "message";
     private SensorTypeService sensorTypeService = new SensorTypeService();
     private SensorUnitService sensorUnitService = new SensorUnitService();
@@ -26,6 +28,7 @@ public class ShowAddSensorPageAction implements Action {
     @Override
     public Router execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Router router = new Router();
+        System.out.println(request.getParameter(SENSOR_ID)+"request.getParameter(SENSOR_ID)");
         ArrayList<SensorType> typesList;
         ArrayList<SensorUnit> unitsList;
         try {

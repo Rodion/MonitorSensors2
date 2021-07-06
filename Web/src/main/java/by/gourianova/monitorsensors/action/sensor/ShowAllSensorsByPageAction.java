@@ -74,8 +74,10 @@ public class ShowAllSensorsByPageAction implements Action {
             request.setAttribute(RIGHT_PAGE, rightPage);
             request.setAttribute(RIGHT_PAGE_CLASS, rightPageClass);
             router.setPagePath(PageConstant.MAIN_PAGE);
-        } catch (ServiceException serviceException) {
-            serviceException.printStackTrace();
+        } catch (ServiceException e) {
+            request.getSession().setAttribute(MESSAGE, e.getMessage());
+            router.setPagePath(PageConstant.ERROR_PAGE);
+            router.setRoute(Router.RouteType.REDIRECT);
         }
         return router;
     }

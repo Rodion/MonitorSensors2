@@ -31,7 +31,10 @@ public enum ActionType {
     CHANGE_USER_DATA(new ChangeUserDataAction()),
 
 
-    SHOW_ALL_USER_SENSORS_CHANGING(new ShowAllUserSensorsAction()),
+  SHOW_ALL_USER_SENSORS(new ShowAllUserSensorsAction()),
+
+    SHOW_ALL_USER_SENSORS_CHANGING(new  ShowAllSensorsByPageAction()),
+
     SHOW_ALL_SENSORS(new ShowAllSensorsAction()),
     SHOW_ALL_TYPES(new ShowAllTypesAction()),
     SHOW_ALL_SENSOR_UNITS(new ShowAllUnitsAction()),

@@ -27,7 +27,7 @@ public class EditSensorAction implements Action {
 
             Sensor sensor = sensorService.findSensorById(Integer.parseInt(request.getParameter(SENSOR_ID)));
             request.getSession().setAttribute(SENSOR, sensor);
-            router.setPagePath(PageConstant.EDIT_SENSOR);
+            router.setPagePath(PageConstant.ADD_SENSOR);
             router.setRoute(Router.RouteType.REDIRECT);
 
         } catch (ServiceException e) {
