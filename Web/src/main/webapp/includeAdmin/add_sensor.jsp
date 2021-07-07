@@ -143,9 +143,9 @@
                 <%-- <td align="center" style="vertical-align: middle; border-color: #dae5ff">${sensor.description}</td>--%>
             </tr>
         </table>
-        <a href="../index.jsp" class="btn btn-default"><fmt:message key="continue"/></a>
+
     </div>
-    <%@ include file="../include/footer.jsp" %>
+
 
 <a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a>
 <br/>

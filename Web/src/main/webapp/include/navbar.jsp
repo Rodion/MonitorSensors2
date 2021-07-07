@@ -27,7 +27,7 @@
                             <input type="text" id="find" name="findString" class="form-control"
                                    placeholder="<fmt:message key="search.sensor.placeholder"/>"
                                    onKeyup="checkData('find')"  maxlength="100" required pattern="[a-zA-Z0-9. ,-_*]{0,100}">
-                            <b style="color: darkgray; font-size: 10px"><fmt:message key="validation.search.sensor"/></b>
+                            <b style="color: red; font-size: 10px"><fmt:message key="validation.search.sensor"/></b>
                         </div>
 
 
