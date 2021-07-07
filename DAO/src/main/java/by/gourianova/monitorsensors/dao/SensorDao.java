@@ -24,6 +24,7 @@ public class SensorDao extends AbstractDao<Sensor> {
 
     //private final static String SQL_FIND_BY_ID = "SELECT sensors.Id , sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensors.Type, sensors.Unit,  sensors.Location, sensors.Description   FROM monitorsensors.sensors WHERE sensors.Id = ?  ORDER BY sensors.Id;";
 
+    //private final static String SQL_FIND_SENSOR = "SELECT sensors.Id ,   sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to,  sensors.Location, sensors.Description  FROM monitorsensors.sensors  WHERE  sensors.Name=?  AND sensors.Model = ?;";
     private final static String SQL_FIND_SENSOR = "SELECT sensors.Id ,   sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit,  sensors.Location, sensors.Description  FROM monitorsensors.sensors, monitorsensors.sensor_types, monitorsensors.sensor_units  WHERE  sensors.Name=?  AND sensors.Model = ?;";
 
     private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location, Description) VALUES (?, ?, ?,?, ?, ?,?, ?);";
