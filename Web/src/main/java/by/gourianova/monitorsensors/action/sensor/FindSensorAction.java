@@ -16,7 +16,10 @@ import java.util.ArrayList;
 public class FindSensorAction implements Action {
     private final static String FIND_PARAMS = "findString";
     private final static String MESSAGE = "message";
-    SensorService sensorService=new SensorService();
+    private final static String SENSORS_LIST = "sensorsList";
+    private SensorService sensorService=new SensorService();
+
+
 
     @Override
     public Router execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,30 +29,31 @@ public class FindSensorAction implements Action {
         ArrayList<Sensor> foundedSensorsList=new ArrayList<>();
         Sensor sensor = new Sensor();
 //TODO if is an appropriate util?
+
+
+
+
+
+
+            String[] words = params.split(" ");
+        System.out.println(words[0]+words[1]);
             try {
-                String[] words = params.split(" ");
-                for (String word : words) {
-                 //TODO: write findSensorByName
-                    // sensor = sensorService.findSensorByName(word);
-
-                     if (sensor!=null)
-                        foundedSensorsList.add(sensor);
+                    foundedSensorsList = sensorService.findEntityByTitleAndModel(words[0], words[1]);
+System.out.println(foundedSensorsList.size()+foundedSensorsList.get(0).toString());
                     //TODO: write findSensorByLocation
-                     //else  {sensor = sensorService.findSensorByLocation(word);
-                         if (sensor!=null)
-                             foundedSensorsList.add(sensor);
+                    //else  {sensor = sensorService.findSensorByLocation(word);
+                request.setAttribute(SENSORS_LIST, foundedSensorsList);
+                router.setPagePath(PageConstant.SENSOR_FIND);
 
-                     }
-                    for (Sensor sensor1 :foundedSensorsList) {
-                        //If Id of sensor=Id of sensor1 sensor delete o not add
-                    //} catch (ServiceException e) {
-                }
-                router.setPagePath(PageConstant.MAIN_PAGE);
-            } catch (Exception  e) {
+            } catch (ServiceException e) {
                 request.getSession().setAttribute(MESSAGE, e.getMessage());
                 router.setPagePath(PageConstant.ERROR_PAGE);
                 router.setRoute(Router.RouteType.REDIRECT);
+
             }
 
-        return router;   }
-        }
+
+
+
+            return router;
+        }}

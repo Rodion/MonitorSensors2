@@ -2,6 +2,7 @@ package by.gourianova.monitorsensors.controller;
 
 import by.gourianova.monitorsensors.action.Action;
 import by.gourianova.monitorsensors.action.ActionFactory;
+import by.gourianova.monitorsensors.exception.ServiceException;
 import by.gourianova.monitorsensors.util.PageConstant;
 
 import javax.servlet.ServletException;
@@ -19,14 +20,22 @@ import java.io.IOException;
 public class Controller extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ServiceException {
         Router router;
         HttpSession session = request.getSession();
         Action action = ActionFactory.getAction(request);

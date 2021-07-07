@@ -28,12 +28,19 @@ public class ShowEditSensorPageAction implements Action {
 private SensorService sensorService=new SensorService();
 //TODO: fix EDIT/UPDATE mode and insert on main_page.jsp
     @Override
-    public Router execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public Router execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ServiceException {
         Router router = new Router();
         ArrayList<SensorType> typesList;
         ArrayList<SensorUnit> unitsList;
-        Sensor sensor=new Sensor();
-           try { sensor=sensorService.findSensorById(Integer.parseInt(request.getParameter(SENSOR_ID)));
+        ArrayList<Sensor> sensorsList;
+
+
+      //TODO: get real params
+        sensorsList=sensorService.findEntityByTitleAndModel("Sensor1","PC35-36");
+        System.out.println(sensorsList.get(0).getId());
+        System.out.println(request.getParameter(SENSOR_ID)+"request.getParameter(SENSOR_ID)");
+
+           try { Sensor sensor=sensorService.findSensorById(sensorsList.get(0).getId());//(Integer.parseInt(request.getParameter(SENSOR_ID)));
                            typesList = sensorTypeService.findAll();
             unitsList = sensorUnitService.findAll();
                request.setAttribute(SENSOR, sensor);
