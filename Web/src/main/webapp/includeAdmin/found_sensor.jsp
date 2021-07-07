@@ -53,7 +53,7 @@
         </div>
     </div>
 
-<a href="/controller?action=show_admin_page" class="btn btn-default"><fmt:message key="continue"/></a>
+<a href="/controller?action=show_all_user_sensors_changing" class="btn btn-default"><fmt:message key="continue"/></a>
 
 </div>
 </body>

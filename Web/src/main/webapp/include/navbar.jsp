@@ -23,11 +23,12 @@
                     <input type="hidden" name="action" value="find_sensor">
 
                     <div class="form-group">
-                             <div class="col-sm-9">
+                             <div class="col-sm-35">
                             <input type="text" id="find" name="findString" class="form-control"
                                    placeholder="<fmt:message key="search.sensor.placeholder"/>"
-                                   onKeyup="checkData('find')"  maxlength="100" required pattern="[a-zA-Z0-9. ,-_*]{0,100}">
-                            <b style="color: red; font-size: 10px"><fmt:message key="validation.search.sensor"/></b>
+                                  onKeyup="checkData('find')"
+                                   maxlength="100" required pattern="[a-zA-Z0-9.+ ,-_*]{0,100}">
+                            <b style="color: greenyellow; font-size: 10px"><fmt:message key="validation.search.sensor"/></b>
                         </div>
 
 
