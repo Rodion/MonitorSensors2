@@ -36,6 +36,17 @@ public class SensorService {
         return sensorsList;
     }
 
+    public ArrayList<Sensor>  findEntityByTitleAndModel(String name, String model) throws ServiceException {
+        ArrayList<Sensor> sensorsList;
+        try {
+            sensorsList = sensorDao. findEntityByTitleAndModel(name, model);
+        } catch (DaoException e) {
+            throw new ServiceException("Transaction failed in findEntityByTitleAndModel method", e);
+        }
+        return sensorsList;
+
+    }
+
     public Sensor editEntity(Integer entityId) throws ServiceException {
         Sensor sensor;
         sensor = sensorDao.editEntity(entityId);
