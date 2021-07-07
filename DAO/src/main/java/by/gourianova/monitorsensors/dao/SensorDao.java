@@ -2,7 +2,6 @@ package by.gourianova.monitorsensors.dao;
 
 
 import by.gourianova.monitorsensors.Sensor;
-import by.gourianova.monitorsensors.User;
 import by.gourianova.monitorsensors.db.ConnectionPool;
 import by.gourianova.monitorsensors.db.ProxyConnection;
 import by.gourianova.monitorsensors.exception.DaoException;
@@ -21,16 +20,11 @@ public class SensorDao extends AbstractDao<Sensor> {
 
     private final static String SQL_FIND_BY_PAGE = "SELECT * FROM monitorsensors.sensors ORDER BY sensors.Id LIMIT ? OFFSET ?;";
 
-
-
-
-   // private final static String SQL_FIND_BY_ID = "SELECT sensors.Id , sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensors.Type, sensors.Unit,  sensors.Location, sensors.Description   FROM monitorsensors.sensors WHERE sensors.Id = ?  ORDER BY sensors.Id;";
     private final static String SQL_FIND_BY_ID = "SELECT * FROM sensors WHERE id = ?;";
-  //private final static String SQL_FIND_BY_ID = "SELECT sensors.Id , sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensors.Type, sensors.Unit,  sensors.Location, sensors.Description   FROM monitorsensors.sensors WHERE sensors.Id = ?  ORDER BY sensors.Id;";
 
-    private final static String SQL_FIND_SENSOR = "SELECT sensors.Id ,   sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit,  sensors.Location, sensors.Description  FROM monitorsensors.sensors, monitorsensors.sensor_types, monitorsensors.sensor_units  WHERE sensors.Id = ? AND sensors.Name=?  AND sensors.Model = ?;";
+    //private final static String SQL_FIND_BY_ID = "SELECT sensors.Id , sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensors.Type, sensors.Unit,  sensors.Location, sensors.Description   FROM monitorsensors.sensors WHERE sensors.Id = ?  ORDER BY sensors.Id;";
 
-    //private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location) VALUES (?, ?, ?,?, ?, ?,?);";
+    private final static String SQL_FIND_SENSOR = "SELECT sensors.Id ,   sensors.Name,  sensors.Model,   sensors.Range_from, sensors.Range_to, sensor_types.Type, sensor_units.Unit,  sensors.Location, sensors.Description  FROM monitorsensors.sensors, monitorsensors.sensor_types, monitorsensors.sensor_units  WHERE  sensors.Name=?  AND sensors.Model = ?;";
 
     private final static String SQL_CREATE_SENSOR = "INSERT INTO  monitorsensors.sensors (Name,  Model,   Range_from, Range_to, Type_Id, Unit_Id,  Location, Description) VALUES (?, ?, ?,?, ?, ?,?, ?);";
 
@@ -79,10 +73,10 @@ public class SensorDao extends AbstractDao<Sensor> {
             preparedStatement = connection.prepareStatement(SQL_UPDATE_SENSOR);
             preparedStatement.setString(1, sensor.getName());
             preparedStatement.setString(2, sensor.getModel());
-            preparedStatement.setInt(3,sensor.getRange_from());
-            preparedStatement.setInt(4,sensor.getRange_to());
-            preparedStatement.setInt(5,sensor.getTypeId());
-            preparedStatement.setInt(6,sensor.getUnitId());
+            preparedStatement.setInt(3, sensor.getRange_from());
+            preparedStatement.setInt(4, sensor.getRange_to());
+            preparedStatement.setInt(5, sensor.getTypeId());
+            preparedStatement.setInt(6, sensor.getUnitId());
             preparedStatement.setString(7, sensor.getLocation());
             preparedStatement.setString(8, sensor.getDescription());
             preparedStatement.executeUpdate();
@@ -94,6 +88,7 @@ public class SensorDao extends AbstractDao<Sensor> {
         }
         return sensor;
     }
+
     @Override
     public ArrayList<Sensor> findAll() throws DaoException {
         ArrayList<Sensor> sensorsList = new ArrayList<>();
@@ -125,7 +120,7 @@ public class SensorDao extends AbstractDao<Sensor> {
 
         try {
             connection = ConnectionPool.getInstance().getConnection();
-           // preparedStatement = connection.prepareStatement(SQL_FIND_SENSOR);
+            // preparedStatement = connection.prepareStatement(SQL_FIND_SENSOR);
             preparedStatement = connection.prepareStatement(SQL_FIND_BY_ID);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -191,6 +186,35 @@ public class SensorDao extends AbstractDao<Sensor> {
         }
         return sensorsList;
     }
+
+    public  ArrayList<Sensor>  findEntityByTitleAndModel(String name, String model) throws DaoException {
+        ArrayList<Sensor> sensorsList = new ArrayList<>();
+        Sensor sensor = null;
+        ProxyConnection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            preparedStatement = connection.prepareStatement(SQL_FIND_SENSOR);
+           // preparedStatement = connection.prepareStatement(SQL_FIND_BY_ID);
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, model);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                sensor = buildSensor(resultSet);
+                 sensorsList.add(sensor);
+            }
+
+
+        } catch (SQLException e) {
+            throw new DaoException("Error in findEntityByID method", e);
+        } finally {
+            close(preparedStatement);
+            close(connection);
+        }
+        return sensorsList;
+    }
+
 
     private Sensor buildSensor(ResultSet resultSet) throws SQLException {
         Sensor sensor = new Sensor();
