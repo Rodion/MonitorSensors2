@@ -14,6 +14,8 @@ public class Sensor extends Entity {
     private Integer range_to;
     private int typeId;
     private int unitId;
+
+   //TODO: get out type&unit
     private String unit;
     private String type;
     private String location;
