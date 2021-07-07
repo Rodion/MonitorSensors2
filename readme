@@ -1,0 +1,29 @@
+A. Чтобы задиплоить проект на azure:
+выбрать линукс JavaEE, Tomcat MySQL + читать докуменцацию (есть на русском) за пользование БД там прилично денег снимают
+
+ B. Чтобы задиплоить проект на "голый хостинг" (ip+пароль + админ права для установки ПО можно найти за 10 долл в месяц) : через putty установить томкат и майскл
+ + документация 
+ https://www.digitalocean.com/community/tutorials/install-tomcat-9-ubuntu-1804
+ 
+https://www.digitalocean.com/community/tutorials/mysql-ubuntu-18-04-ru
+ 
+ C. Чтобы развернуть проект на локальном хосте: 
+ 
+ Скачать  IntelliJ IDEA Ultimate, MySQL сервер, Workbench и Connector J, Tomcat, Java jdk, настроить path
+Запустить MySQL  Workbench под админом root и паролем 778899 (или поменять данные в проекте в configuration.properties)
+В БД IntelliJ IDEA создать БД MySQL, импортировать sql-скрипт
+В Edit Configurations  IntelliJ IDEA добавить Tomcat -> Run
+
+
+
+PS
+Добавлять нового пользователя, менять ему роль, добавлять и удалять новые роли, сенсоры, единицы измерения и типы сенсоров можно под ролью "Админ" - кнопка "Администратор"
+Приложение двуязычное: русский и английский
+Поиск не дописан. Есть мелкие недочеты, немного излишнего кода: если придется доделывать, то может понадобиться
+Bootstrap можно вживить в Angular, начала делать на Hibernate и SpringBoot, но их знаю не так хорошо, боялась не успеть доделать.
+Spring Security - убирает логин и пароль в HTTP-запросе: как это делать разобралась, но готовый проект делает все то же самое.
+
+
+Ссылка на проект https://github.com/Tatiana-Gourianova/MonitorSensors2 
+sql-скрипт там же
+вот 3-минутное видео https://www.youtube.com/watch?v=3sijUh2OJ4s 
